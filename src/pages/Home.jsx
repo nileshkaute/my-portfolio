@@ -59,7 +59,7 @@ const Home = () => {
   };
 
   return (
-    <div style={{ overflowX: 'hidden' }}>
+    <div style={{ overflowX: 'hidden' }} id="/">
       {/* Hero Section */}
       <motion.div 
         initial={{ opacity: 0 }}
@@ -269,6 +269,7 @@ const Home = () => {
 
       {/* About Section */}
       <motion.section 
+      id="about"
         className="section-container flex items-center justify-center py-16 bg-gray-500 text-gray-900 px-4 sm:px-8 md:px-12 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -321,6 +322,7 @@ const Home = () => {
 
       {/* Skills Section */}
       <motion.section
+        id="skills"
         className="flex items-center justify-center py-16 px-4 sm:px-8 md:px-12"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -399,6 +401,7 @@ const Home = () => {
 
       {/* Services Section */}
       <motion.section 
+      id="services"
         className="flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px] bg-gray-500 text-gray-900 px-4 py-8 sm:py-12 md:py-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

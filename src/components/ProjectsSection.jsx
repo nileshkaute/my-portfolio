@@ -26,7 +26,7 @@ const ProjectsSection = () => {
 
   return (
     <>
-     <section className="py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-10 bg-black text-gray-100 flex flex-col items-center justify-center">
+     <section id="projects" className="py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-10 bg-black text-gray-100 flex flex-col items-center justify-center">
         <div className="max-w-7xl mx-auto w-full space-y-8 sm:space-y-10 md:space-y-12">
           {/* Title */}
           <motion.div

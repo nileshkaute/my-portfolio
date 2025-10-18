@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Button from './Button';
 import resume from '../assets/images/resume.pdf';
 
@@ -7,10 +6,9 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleResumeDownload = () => {
-    // Create a temporary anchor element to trigger download
     const link = document.createElement('a');
     link.href = resume;
-    link.download = 'Resume.pdf'; // You can customize the filename
+    link.download = 'Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -22,37 +20,35 @@ const Navbar = () => {
         <i className="text-xs sm:text-xs md:text-sm lg:text-base">NK</i>
       </div>
 
-      {/* Mobile Menu Button */}
       {/* Mobile Menu Button (Right Aligned) */}
-<div className="flex justify-end w-full">
-  <button 
-    className="text-xl sm:text-2xl md:text-3xl mr-3 lg:hidden z-50 focus:outline-none"
-    onClick={() => setIsMenuOpen(!isMenuOpen)}
-    aria-label="Toggle menu"
-  >
-    {isMenuOpen ? '✕' : '☰'}
-  </button>
-</div>
-
+      <div className="flex justify-end w-full">
+        <button 
+          className="text-xl sm:text-2xl md:text-3xl mr-3 lg:hidden z-50 focus:outline-none"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? '✕' : '☰'}
+        </button>
+      </div>
 
       {/* Desktop Navigation */}
-    <ul className="hidden lg:flex underline justify-center items-center text-center gap-6 lg:gap-8 xl:gap-12 2xl:gap-16 text-sm lg:text-base xl:text-xl 2xl:text-2xl tracking-wide absolute left-1/2 transform -translate-x-1/2">
-  <li className="hover:text-gray-300 transition-colors duration-200">
-    <Link to="/">Home</Link>
-  </li>
-  <li className="hover:text-gray-300 transition-colors duration-200">
-    <Link to="#about">About</Link>
-  </li>
-  <li className="hover:text-gray-300 transition-colors duration-200">
-    <Link to="#skills">Skills</Link>
-  </li>
-  <li className="hover:text-gray-300 transition-colors duration-200">
-    <Link to="#projects">Projects</Link>
-  </li>
-  <li className="hover:text-gray-300 transition-colors duration-200">
-    <Link to="#contact">Contact</Link>
-  </li>
-</ul>
+      <ul className="hidden lg:flex underline justify-center items-center text-center gap-6 lg:gap-8 xl:gap-12 2xl:gap-16 text-sm lg:text-base xl:text-xl 2xl:text-2xl tracking-wide absolute left-1/2 transform -translate-x-1/2">
+        <li className="hover:text-gray-300 transition-colors duration-200">
+          <a href="#home">Home</a>
+        </li>
+        <li className="hover:text-gray-300 transition-colors duration-200">
+          <a href="#about">About</a>
+        </li>
+        <li className="hover:text-gray-300 transition-colors duration-200">
+          <a href="#skills">Skills</a>
+        </li>
+        <li className="hover:text-gray-300 transition-colors duration-200">
+          <a href="#services">Services</a>
+        </li>
+        <li className="hover:text-gray-300 transition-colors duration-200">
+          <a href="#projects">Projects</a>
+        </li>
+      </ul>
 
       {/* Desktop Button */}
       <div className="hidden lg:block">
@@ -76,25 +72,24 @@ const Navbar = () => {
         <div className="absolute top-12 sm:top-14 md:top-16 left-0 right-0 bg-black z-40 lg:hidden border-t border-gray-800 shadow-lg">
           <ul className="flex flex-col items-center gap-3 sm:gap-4 md:gap-5 py-4 sm:py-6 md:py-8 text-base sm:text-lg md:text-xl">
             <li className="hover:text-gray-300 transition-colors duration-200">
-              <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
             </li>
             <li className="hover:text-gray-300 transition-colors duration-200">
-              <Link to="#about" onClick={() => setIsMenuOpen(false)}>About</Link>
+              <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
             </li>
             <li className="hover:text-gray-300 transition-colors duration-200">
-              <Link to="#skills" onClick={() => setIsMenuOpen(false)}>Skills</Link>
+              <a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a>
             </li>
             <li className="hover:text-gray-300 transition-colors duration-200">
-              <Link to="#projects" onClick={() => setIsMenuOpen(false)}>Projects</Link>
+              <a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a>
             </li>
             <li className="hover:text-gray-300 transition-colors duration-200">
-              <Link to="#contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
             </li>
-            <li className="mt-2 sm:mt-3 md:mt-4 ">
+            <li className="mt-2 sm:mt-3 md:mt-4">
               <Button
                 label="Resume"
                 icon="📄"
-                
                 onClick={() => {
                   handleResumeDownload();
                   setIsMenuOpen(false);
