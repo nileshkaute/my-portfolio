@@ -105,8 +105,8 @@ const Home = () => {
         >
           <motion.div 
             className="absolute w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[480px] md:h-[480px] lg:w-[600px] lg:h-[600px] xl:w-[650px] xl:h-[650px] bg-gray-700 rounded-full opacity-30 -z-10"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            // animate={{ rotate: 360 }}
+            // transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           />
           <div className="relative inline-block p-[2px] sm:p-[3px] md:p-[4px] lg:p-[5px] rounded-full">
             <motion.img
