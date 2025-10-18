@@ -1,0 +1,37 @@
+.water-btn {
+  position: relative;
+  overflow: hidden;
+  background: #9ca3af; /* default gray */
+  color: #000;
+  z-index: 1; /* keep button content above background */
+}
+
+/* Water fill effect layer */
+.water-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  transition: all 0.6s ease-in-out;
+  z-index: 0; /* behind the text */
+  border-radius: inherit;
+}
+
+/* Hover effect: water rises */
+.water-btn:hover::before {
+  bottom: 0;
+}
+
+/* Keep text above the pseudo-element */
+.water-btn .button-text {
+  position: relative;
+  z-index: 10;
+}
+
+/* Optional text color change */
+.water-btn:hover .button-text {
+  color: #fff;
+}
