@@ -23,22 +23,36 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Button */}
-      <button 
-        className="ml-auto mr-2 lg:hidden text-xl sm:text-2xl md:text-3xl z-50 focus:outline-none"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle menu"
-      >
-        {isMenuOpen ? '✕' : '☰'}
-      </button>
+      {/* Mobile Menu Button (Right Aligned) */}
+<div className="flex justify-end w-full">
+  <button 
+    className="text-xl sm:text-2xl md:text-3xl mr-3 lg:hidden z-50 focus:outline-none"
+    onClick={() => setIsMenuOpen(!isMenuOpen)}
+    aria-label="Toggle menu"
+  >
+    {isMenuOpen ? '✕' : '☰'}
+  </button>
+</div>
+
 
       {/* Desktop Navigation */}
-      <ul className="hidden lg:flex underline justify-center gap-4 lg:gap-8 xl:gap-12 2xl:gap-16 w-full text-sm lg:text-base xl:text-xl 2xl:text-2xl tracking-wide ml-6 lg:ml-8 xl:ml-12 2xl:ml-16">
-        <li className="hover:text-gray-300 transition-colors duration-200"><Link to="/">Home</Link></li>
-        <li className="hover:text-gray-300 transition-colors duration-200"><Link to="#about">About</Link></li>
-        <li className="hover:text-gray-300 transition-colors duration-200"><Link to="#skills">Skills</Link></li>
-        <li className="hover:text-gray-300 transition-colors duration-200"><Link to="#projects">Projects</Link></li>
-        <li className="hover:text-gray-300 transition-colors duration-200"><Link to="#contact">Contact</Link></li>
-      </ul>
+    <ul className="hidden lg:flex underline justify-center items-center text-center gap-6 lg:gap-8 xl:gap-12 2xl:gap-16 text-sm lg:text-base xl:text-xl 2xl:text-2xl tracking-wide absolute left-1/2 transform -translate-x-1/2">
+  <li className="hover:text-gray-300 transition-colors duration-200">
+    <Link to="/">Home</Link>
+  </li>
+  <li className="hover:text-gray-300 transition-colors duration-200">
+    <Link to="#about">About</Link>
+  </li>
+  <li className="hover:text-gray-300 transition-colors duration-200">
+    <Link to="#skills">Skills</Link>
+  </li>
+  <li className="hover:text-gray-300 transition-colors duration-200">
+    <Link to="#projects">Projects</Link>
+  </li>
+  <li className="hover:text-gray-300 transition-colors duration-200">
+    <Link to="#contact">Contact</Link>
+  </li>
+</ul>
 
       {/* Desktop Button */}
       <div className="hidden lg:block">
