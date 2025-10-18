@@ -267,46 +267,47 @@ const Home = () => {
         <div className="h-1 w-20 sm:w-24 md:w-28 lg:w-32 xl:w-34 bg-gray-700 opacity-30 rounded-full" />
       </motion.div>
 
-      {/* About Section */}
-      <motion.section 
-      id="about"
-        className="section-container flex items-center justify-center py-16 bg-gray-500 text-gray-900 px-4 sm:px-8 md:px-12 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-      >
-        <div className="max-w-6xl w-full text-center">
-          {/* Title */}
-          <motion.div 
-            className="mb-8 text-left ml-2 sm:ml-3 md:ml-4"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <h2 className="text-4xl sm:text-5xl font-bold inline-block border-b-4 border-yellow-500 pb-2">
-              -About
-            </h2>
-          </motion.div>
+    <motion.section 
+  id="about"
+  className="flex items-center justify-center py-16 bg-gray-500 text-gray-900 px-4 sm:px-8 md:px-12 h-auto min-h-[250px] sm:min-h-[340px] md:min-h-[350px] lg:min-h-[400px]"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+>
+  <div className="max-w-6xl w-full text-center">
+    {/* Title - Always Centered */}
+    <motion.div 
+      className="mb-6 sm:mb-8 text-center"
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold inline-block border-b-4 border-yellow-500 pb-2" style={{marginBottom:"10px"}}>
+        -About
+      </h2>
+    </motion.div>
 
-          {/* About Text */}
-          <motion.p 
-            className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-890"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            I'm a web developer with a passion for building responsive and dynamic applications that feel smooth and intuitive.  
-            I enjoy solving problems and learning through hands-on experience.  
-            I focus on writing clean code and improving with every project. 
-            I'm known for being <span className="text-yellow-400 font-semibold">trustworthy</span>, <span className="text-yellow-400 font-semibold">creative</span>, and a clear <span className="text-yellow-400 font-semibold">communicator</span>.  
-            I care about teamwork, thoughtful design, and meaningful results.  
-            My goal is to keep growing and contribute to work that makes a difference.
-          </motion.p>
-        </div>
-      </motion.section>
+    {/* About Text - Always Centered */}
+    <motion.div 
+      className="text-center"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
+      <p className="text-sm sm:text-base md:text-lg lg:text-xl inline-block leading-relaxed text-gray-800 max-w-4xl mx-auto">
+        I'm a web developer with a passion for building responsive and dynamic applications that feel smooth and intuitive.  
+        I enjoy solving problems and learning through hands-on experience.  
+        I focus on writing clean code and improving with every project. 
+        I'm known for being <span className="text-yellow-400 font-semibold">trustworthy</span>, <span className="text-yellow-400 font-semibold">creative</span>, and a clear <span className="text-yellow-400 font-semibold">communicator</span>.  
+        I care about teamwork, thoughtful design, and meaningful results.  
+        My goal is to keep growing and contribute to work that makes a difference.
+      </p>
+    </motion.div>
+  </div>
+</motion.section>
 
       {/* Divider */}
       <motion.div 
@@ -400,64 +401,64 @@ const Home = () => {
       </motion.div>
 
       {/* Services Section */}
-      <motion.section 
-      id="services"
-        className="flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px] bg-gray-500 text-gray-900 px-4 py-8 sm:py-12 md:py-16"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-      >
-        <div className="max-w-6xl w-full text-center">
-          {/* Title */}
-          <motion.div 
-            className="mb-8 sm:mb-12 text-right"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold inline-block border-b-4 border-yellow-500 pb-2 leading-tight">
-              -Services
-            </h2>
-          </motion.div>
+<motion.section 
+  id="services"
+  className="flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px] bg-gray-500 text-gray-900 px-3 sm:px-4 py-8 sm:py-12 md:py-16"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+>
+  <div className="max-w-5xl w-full text-center"> {/* Slightly wider container */}
+    {/* Title - Centered for all screen sizes */}
+    <motion.div 
+      className="mb-6 sm:mb-10 text-center"
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold inline-block border-b-4 border-yellow-500 pb-2 leading-tight" style={{marginBottom:"10px"}}> 
+        -Services
+      </h2>
+    </motion.div>
 
-          {/* Services List */}
-          <div className="flex flex-col sm:flex-row justify-between gap-6 text-left">
-            {[
-              {
-                title: "Web Development",
-                description: "Building responsive and dynamic websites with clean code."
-              },
-              {
-                title: "UI/UX Design",
-                description: "Creating smooth, intuitive, and visually appealing interfaces."
-              },
-              {
-                title: "Project Consultation",
-                description: "Helping plan, structure, and scale web projects efficiently."
-              }
-            ].map((service, index) => (
-              <motion.div 
-                key={service.title}
-                className="flex-1"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1, delay: index * 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-                whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.3 } }}
-              >
-                <h3 className="text-yellow-400 font-semibold text-lg sm:text-xl md:text-2xl mb-2 leading-snug">
-                  {service.title}
-                </h3>
-                <p className="text-gray-890 text-sm sm:text-base md:text-lg leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
+    {/* Services List - Optimized for small screens */}
+    <div className="flex  sm:flex-row justify-center items-stretch p-2 ml-2 mr-2 sm:p-4 md:p-5 lg:p-6 gap-5 sm:gap-4 md:gap-6 lg:gap-10 text-center w-full">
+      {[
+        {
+          title: "Web Development",
+          description: "Building responsive and dynamic websites with clean code."
+        },
+        {
+          title: "UI/UX Design",
+          description: "Creating smooth, intuitive, and visually appealing interfaces."
+        },
+        {
+          title: "Project Consultation",
+          description: "Helping plan, structure, and scale web projects efficiently."
+        }
+      ].map((service, index) => (
+        <motion.div 
+          key={service.title}
+          className="flex-1 min-w-0 max-w-full sm:max-w-[200px] md:max-w-[220px] lg:max-w-[240px] xl:max-w-[260px] min-h-[140px] sm:min-h-[160px] md:min-h-[170px] lg:min-h-[180px] bg-gray-600 rounded-lg p-3 sm:p-4 md:p-5 shadow-lg"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, delay: index * 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+          whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.3 } }}
+        >
+          <h3 className="text-yellow-400 font-semibold text-base sm:text-lg md:text-xl lg:text-2xl mb-2 sm:mb-3 leading-snug"style={{marginTop:"10px",marginBottom:"20px"}}>
+            {service.title}
+          </h3>
+          <p className="text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed">
+            {service.description}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</motion.section>
 
       {/* Divider */}
       <motion.div 
