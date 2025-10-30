@@ -364,7 +364,7 @@ const Home = () => {
               { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", desc: "Build server-side apps" },
               { name: "Responsive Design", icon: "https://cdn-icons-png.flaticon.com/512/1055/1055646.png", desc: "Make sites fit all screens" },
               { name: "Framer Motion", icon: "https://cdn.worldvectorlogo.com/logos/framer-1.svg", desc: "Animate React components" },
-              { name: "GSAP", icon: "https://seeklogo.com/images/G/greensock-gsap-icon-logo-13BB451E88-seeklogo.com.png", desc: "Create advanced animations" },
+              { name: "GSAP", icon: "https://www.nicepng.com/png/detail/949-9490768_short-instructional-screencast-video-tutorials-for-gsap-logo.png", desc: "Create advanced animations" },
             ].map((skill, index) => (
               <motion.div
                 key={skill.name}
