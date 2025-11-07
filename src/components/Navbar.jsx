@@ -1,21 +1,22 @@
+// ...existing code...
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
-import resume from '../assets/images/NileshKauteResume.pdf';
+// ...existing code...
+// removed: import resume from '../assets/images/NileshKauteResume.pdf';
 
 const Navbar = () => {
   const [isMoved, setIsMoved] = useState(false);
 
+  // ...existing code...
   const handleResumeDownload = () => {
-    const link = document.createElement('a');
-    link.href = resume;
-    link.download = 'NileshKauteResume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Serve resume from public/ to avoid bundler resolution errors on Vercel
+    const url = '/NileshKauteResume.pdf'; // place the PDF at public/NileshKauteResume.pdf
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
+  // ...existing code...
 
   return (
     <motion.div
@@ -95,3 +96,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+// ...existing code...
