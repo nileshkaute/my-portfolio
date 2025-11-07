@@ -4,7 +4,7 @@ import '../styles/Buttons.css';
 
 const Button = ({ label = "Click", to, onClick, className = "", icon }) => {
   // Base style for the button
-  const baseStyle = `relative rounded font-semibold overflow-hidden w-28 sm:w-32 md:w-36  lg:w-40 h-8 sm:h-9 md:h-10 text-xs sm:text-sm md:text-base flex items-center justify-center bg-gray-400 text-black transition-all duration-300`;
+  const baseStyle = `relative rounded font-semibold overflow-hidden w-28 sm:w-32 md:w-36  lg:w-40 h-8 sm:h-9 md:h-10 text-xs sm:text-sm md:text-base flex items-center justify-center  text-black transition-all duration-300`;
 
   // Button content with optional icon
   const content = (

@@ -1,54 +1,65 @@
 import React from "react";
-import { motion } from "framer-motion";
-import '../styles/Buttons.css';
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ title, image, techs, description, link }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="bg-black/30 backdrop-blur-sm overflow-hidden flex justify-center items-center text-center flex-col border border-gray-600 hover:border-yellow-400 transition-all duration-300 w-full max-w-[250px] sm:max-w-[260px] h-auto min-h-[320px] hover:shadow-lg hover:shadow-yellow-500/20 hover:-translate-y-2"
-    >
-      {/* Project Image Container */}
-      <div className="w-full h-32 sm:h-36 overflow-hidden relative group">
+    <div className="bg-white/5 border w-95 h-110 border-white/10 rounded overflow-hidden mb-8  relative backdrop-blur-md transition-all duration-500  hover:shadow-2xl hover:shadow-black-600/25  group">
+      {/* Gradient overlay effect */}
+      <div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+
+      {/* Image Container */}
+      <div className="relative overflow-hidden h-[180px]">
         <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-all duration-400 group-hover:scale-110"
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+          src={image}
+          alt={title}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:shadow-blac"
+        /> 
       </div>
 
-      {/* Content Container */}
-      <div className="flex flex-col flex-grow p-3 sm:p-4 " style={{marginTop:"10px"}}>
-        {/* Project Title */}
-        <h3 className="text-lg sm:text-xl font-bold text-white mb-2 line-clamp-1">
-          {project.title}
+      {/* Card Body */}
+      <div className="relative z-10 gap-3" style={{ padding: "15px" }}>
+        <h3
+          className="text-xl font-semibold mb-3 text-white group-hover:text-purple-400 transition-colors duration-300"
+          style={{ margin: "3px 3px" }}
+        >
+          {title}
         </h3>
 
+       
+
         {/* Description */}
-        <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
-          {project.description}
+        <p
+          className="text-gray-400 mb-4 leading-relaxed h-20 overflow-hidden"
+          style={{ margin: "15px 0 3px 2px" }}
+        >
+          {description}
         </p>
 
-        {/* Button */}
-        <div className="mt-auto flex justify-center" style={{marginBottom:"20px"}}>
-          <button className="water-btn w-30 font-medium overflow-hidden h-8 sm:h-9 text-xs sm:text-sm flex items-center justify-center bg-gray-500 hover:bg-yellow-400 text-white hover:text-black transition-all duration-300 rounded-md hover:scale-105 active:scale-95">
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full h-full flex items-center justify-center"
+         {/* Tech Badges */}
+        <div className="mb-3 flex flex-wrap gap-2" style={{ margin: "3px 3px" }}>
+          {techs.map((tech, index) => (
+            <span
+              key={index}
+              className="inline-block border border-purple-500 text-purple-400 text-xs rounded-full hover:bg-purple-600/40 transition-all duration-300 hover:-translate-y-0.5"
+              style={{ padding: "5px 8px", margin: "15px 0 3px 2px" }}
             >
-              <span className="button-text">View Project</span> 
-            </a>
-          </button>
+              {tech}
+            </span>
+          ))}
+        </div>
+        {/* Project Links */}
+        <div className="flex gap-3 mt-4" style={{ margin: "20px 0 2px 2px" }}>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ padding: "5px 8px" }}
+            className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r border border-purple-600 text-purple-500 rounded-full text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-300/40"
+          >
+            Live Demo <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+          </a>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

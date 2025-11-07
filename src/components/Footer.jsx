@@ -24,7 +24,8 @@ const Footer = () => {
 
   return (
     <motion.footer 
-      className="bg-gray-500 text-gray-800 py-8 lg:h-55 md:h-40 sm:py-10 lg:py-12 px-4 sm:px-5 lg:px-6 mt-8 sm:mt-10 lg:mt-12 text-center"
+    id="contact"
+      className="bg-white/5 border  border-white/10 text-gray-400 py-8 lg:h-55 md:h-40 sm:py-10 lg:py-12 px-4 sm:px-5 lg:px-6 mt-8 sm:mt-10 lg:mt-12 text-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
@@ -34,14 +35,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-4xl w-full">
           {/* About Section */}
           <motion.div
-            className="flex flex-col items-center p-3 sm:p-4"
+            className="flex flex-col items-center p-3 sm:p-4 text-justify"
             variants={fadeInUp}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
             <h2 className="text-base sm:text-lg lg:text-xl font-semibold mb-2 sm:mb-3">About</h2>
-            <p className="text-xs sm:text-sm lg:text-base text-gray-700 leading-relaxed">
-              I am a web developer creating modern and responsive web applications.
+            <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed">
+            I am a web developer creating modern, user-friendly, responsive, and UX-driven web applications.
+
             </p>
           </motion.div>
 
@@ -53,11 +55,11 @@ const Footer = () => {
             transition={{ duration: 0.3, delay: 0.1 }}
           >
             <h2 className="text-base sm:text-lg lg:text-xl font-semibold mb-2 sm:mb-3">Projects</h2>
-            <ul className="text-xs sm:text-sm lg:text-base text-gray-700 space-y-1 sm:space-y-2">
+            <ul className="text-xs text-justify sm:text-sm list-disc lg:text-base leading-relaxed text-gray-600 space-y-1 sm:space-y-2">
               {["Portfolio Website", "Movie Ticket App", "Weather App"].map((project, index) => (
                 <motion.li 
                   key={project}
-                  className="hover:text-gray-900 cursor-pointer py-1"
+                  className="text-gray-600 cursor-pointer py-1"
                   whileHover={{ x: 3, color: "#1f2937" }}
                   transition={{ duration: 0.2 }}
                 >
@@ -77,16 +79,16 @@ const Footer = () => {
             <h2 className="text-base sm:text-lg lg:text-xl font-semibold mb-2 sm:mb-3">Contact</h2>
             <div className="space-y-2 sm:space-y-3">
               <motion.p 
-                className="text-xs sm:text-sm lg:text-base text-gray-700 hover:text-gray-900 cursor-pointer flex items-center justify-center sm:justify-start space-x-2"
-                whileHover={{ x: 3, color: "#1f2937" }}
+                className="text-xs sm:text-sm leading-relaxed lg:text-base text-gray-600 hover:text-purple-600  flex items-center justify-center sm:justify-start space-x-2"
+               
                 transition={{ duration: 0.2 }}
               >
                 <FaEnvelope className="text-sm sm:text-base" /> 
                 <span className="break-all">example@gmail.com</span>
               </motion.p>
               <motion.p 
-                className="text-xs sm:text-sm lg:text-base text-gray-700 hover:text-gray-900 cursor-pointer flex items-center justify-center sm:justify-start space-x-2"
-                whileHover={{ x: 3, color: "#1f2937" }}
+                className="text-xs sm:text-sm lg:text-base text-gray-600 hover:text-purple-600 cursor-pointer flex items-center justify-center sm:justify-start space-x-2"
+               
                 transition={{ duration: 0.2 }}
               >
                 <FaPhone className="text-sm sm:text-base" /> 
@@ -103,7 +105,7 @@ const Footer = () => {
             transition={{ duration: 0.3, delay: 0.3 }}
           >
             <h2 className="text-base sm:text-lg lg:text-xl font-semibold mb-2 sm:mb-3">Social</h2>
-            <ul className="text-xs sm:text-sm lg:text-base text-gray-700 space-y-2 sm:space-y-3 flex flex-col items-center">
+            <ul className="text-xs sm:text-sm leading-relaxed  lg:text-base text-left text-gray-600 space-y-2 sm:space-y-3 flex flex-col items-center">
               <motion.li
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
@@ -112,7 +114,7 @@ const Footer = () => {
                   href="https://github.com/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-gray-900 flex items-center space-x-2"
+                  className="hover:text-purple-600 flex items-center space-x-2 "
                 >
                   <FaGithub className="text-sm sm:text-base" /> 
                   <span>GitHub</span>
@@ -126,7 +128,7 @@ const Footer = () => {
                   href="https://linkedin.com/in/yourusername"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-gray-900 flex items-center space-x-2"
+                  className="hover:text-purple-600 flex items-center space-x-2"
                 >
                   <FaLinkedin className="text-sm sm:text-base" /> 
                   <span>LinkedIn</span>
@@ -138,7 +140,7 @@ const Footer = () => {
       </div>
 
       <motion.div 
-        className="text-gray-700 text-xs sm:h-15 sm:text-sm lg:text-base bg-black mt-4 md:h-7 lg:h-15 sm:mt-6 lg:mt-8 py-2 justify-center flex items-center"
+        className="text-gray-600 text-xs sm:h-15 sm:text-sm lg:text-base bg-black mt-4 md:h-7 lg:h-15 sm:mt-6 lg:mt-8 py-2 justify-center flex items-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
