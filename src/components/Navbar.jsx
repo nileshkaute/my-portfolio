@@ -13,7 +13,7 @@ const Navbar = () => {
   // ...existing code...
   const handleResumeDownload = () => {
     // Serve resume from public/ to avoid bundler resolution errors on Vercel
-    const url = '/NileshKauteResume.pdf'; // place the PDF at public/NileshKauteResume.pdf
+    const url = '/NileshkauteResume.pdf'; // place the PDF at public/NileshKauteResume.pdf
     window.open(url, '_blank', 'noopener,noreferrer');
   };
   // ...existing code...
