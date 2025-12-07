@@ -308,18 +308,7 @@ const Home = () => {
       {/* Project Section */}
  <ProjectsSection/>      
 
-          {/* Divider */}
-      <motion.div
-        className="w-full flex justify-center mt-10 sm:mt-14 md:mt-18 lg:mt-24 "
-        style={{  marginTop: "30px" }}
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-      >
-        <Divider />
-      </motion.div>
-
+         
      
     </div>
   );

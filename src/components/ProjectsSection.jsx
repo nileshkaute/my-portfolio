@@ -23,7 +23,8 @@ const item = {
 const ProjectsSection = () => {
   return (
     <motion.div
-      className="flex flex-col justify-center items-center py-12" id="projects"
+      className="flex flex-col justify-center sm:p-10 items-center py-12 " id="projects"
+      style={{marginBottom:"100px"}}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.25 }}
