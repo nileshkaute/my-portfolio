@@ -5,9 +5,9 @@ const SkillCard = ({ title, items }) => {
     <div
       className="
         w-full 
-        sm:w-[300px] 
-        md:w-[350px] 
-        lg:w-[400px] 
+        sm:w-[310px] 
+        md:w-[310px] 
+        lg:w-[410px] 
         min-h-40 
         border-2 
         rounded-2xl 
@@ -27,9 +27,15 @@ const SkillCard = ({ title, items }) => {
       {/* Show all skills inside the card */}
       <div className="flex flex-wrap justify-center gap-3">
         {items.map((skill, index) => (
-          <h4 key={index} className="text-sm sm:text-base">
-            {skill.name}
-          </h4>
+   <h4 
+  key={index}
+  className="brush-bg  text-sm sm:text-sm text-black  inline-block"
+  style={{padding:"3px 4px"}}
+>
+  {skill.name}
+</h4>
+
+
         ))}
       </div>
     </div>
