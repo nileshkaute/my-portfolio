@@ -34,7 +34,9 @@ const SkillsSection = () => {
   const technologies = skills.slice(12, 15);
 
   return (
-    <div className="flex flex-col gap-10 justify-center items-center w-full "style={{padding:"20px"}}>
+    <div 
+    id="skills"
+    className="flex flex-col gap-10 justify-center items-center w-full "style={{padding:"20px"}}>
       {/* Heading */}
       <motion.div
         className="mb-6 sm:mb-8 text-center"

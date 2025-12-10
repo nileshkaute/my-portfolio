@@ -83,9 +83,9 @@ const Navbar = () => {
           <Link to="/#projects" className="hover:underline" onClick={() => setIsMoved(false)}>
             Projects
           </Link>
-          <Link to="/#contact" className="hover:underline" onClick={() => setIsMoved(false)}>
+          {/* <Link to="/#contact" className="hover:underline" onClick={() => setIsMoved(false)}>
             Contact
-          </Link>
+          </Link> */}
           <div className="mt-2">
             <Button label="Resume" icon="📄" onClick={() => { handleResumeDownload(); setIsMoved(false); }} />
           </div>

@@ -19,6 +19,10 @@ html {
   position: relative;
   color: black;
 }
+::selection {
+  background: yellow;
+  color: black;
+}
 
 .brush-bg::before {
   content: "";
