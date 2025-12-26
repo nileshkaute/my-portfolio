@@ -1,17 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { ReactLenis, useLenis } from 'lenis/react'
-
+import { ReactLenis, useLenis } from 'lenis/react';
+import ScreenLoader from './components/ScreenLoader.jsx';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 
-
-
 const App = () => {
-  const lenis = useLenis((lenis) => {
-    // called every scroll
-    console.log(lenis)
-  })
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useLenis(() => {});
 
   const location = useLocation();
   useEffect(() => {
@@ -24,12 +28,17 @@ const App = () => {
 
   return (
     <>
-      <ReactLenis root />
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home/>} />
-      </Routes>
-     
+      {loading && <ScreenLoader />}
+
+      {!loading && (
+        <>
+          <ReactLenis root />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </>
+      )}
     </>
   );
 };

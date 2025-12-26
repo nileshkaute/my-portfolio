@@ -30,7 +30,7 @@ const Button = ({ label = "Click", to, onClick, className = "", icon }) => {
   return (
     <button
       onClick={onClick}
-      className={`${baseStyle} water-btn ${className}`}
+      className={`${baseStyle} water-btn cursor-pointer ${className}`}
     >
       {content}
     </button>
