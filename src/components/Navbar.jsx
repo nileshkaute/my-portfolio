@@ -5,7 +5,7 @@ import { X, Menu } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 // ...existing code...
-// removed: import resume from '../assets/images/NileshKauteResume.pdf';
+import resume from '../assets/NileshKauteResume.pdf';
 
 const Navbar = () => {
   const [isMoved, setIsMoved] = useState(false);
@@ -13,12 +13,9 @@ const Navbar = () => {
   // ...existing code...
   const handleResumeDownload = () => {
     // Create a download link for the resume
-    const url = '/NileshKauteResume.pdf';
     const link = document.createElement('a');
-    link.href = url;
+    link.href = resume;
     link.download = 'NileshKauteResume.pdf';
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
