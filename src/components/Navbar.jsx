@@ -12,9 +12,16 @@ const Navbar = () => {
 
   // ...existing code...
   const handleResumeDownload = () => {
-    // Serve resume from public/ to avoid bundler resolution errors on Vercel
-    const url = '/NileshKauteResume.pdf'; // place the PDF at public/NileshKauteResume.pdf
-    window.open(url, '_blank', 'noopener,noreferrer');
+    // Create a download link for the resume
+    const url = '/NileshKauteResume.pdf';
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'NileshKauteResume.pdf';
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   // ...existing code...
 
