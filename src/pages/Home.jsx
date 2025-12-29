@@ -7,6 +7,7 @@ import SkillsSection from "../components/SkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
 import AboutSection from "../components/AboutSection";
 import Divider from "../components/Divider";
+import Experience from "../components/Exprience";
 
 const Home = () => {
   const [showBoxes, setShowBoxes] = useState(false);
@@ -308,7 +309,20 @@ const Home = () => {
       {/* Project Section */}
  <ProjectsSection/>      
 
-         
+         {/* Divider */}
+      <motion.div
+        className="w-full flex justify-center mt-10 sm:mt-14 md:mt-18 lg:mt-24 mb-12"
+        style={{ marginBottom: "100px", marginTop: "30px" }}
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
+        <Divider />
+      </motion.div>
+
+
+        <Experience/> 
      
     </div>
   );

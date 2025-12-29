@@ -2,6 +2,9 @@
 *{
   padding: 0;
   margin: 0;
+   user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 body {
   background-color: black;
@@ -19,10 +22,8 @@ html {
   position: relative;
   color: black;
 }
-::selection {
-  background: yellow;
-  color: black;
-}
+
+
 
 .brush-bg::before {
   content: "";
@@ -38,4 +39,8 @@ html {
     95% 50%, 100% 75%, 85% 100%, 65% 95%, 45% 100%, 25% 90%, 5% 100%, 0% 75%
   );
   border-radius: 4px;
+}
+
+* {
+  cursor: none;
 }

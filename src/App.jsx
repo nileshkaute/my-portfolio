@@ -4,6 +4,7 @@ import { ReactLenis, useLenis } from 'lenis/react';
 import ScreenLoader from './components/ScreenLoader.jsx';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
+import CustomCursor from "./components/CustomCursor.jsx";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,7 @@ const App = () => {
       {!loading && (
         <>
           <ReactLenis root />
+              <CustomCursor />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
