@@ -23,40 +23,43 @@ const Navbar = () => {
   // ...existing code...
 
   return (
-    <motion.div
-      initial={{ x: 0, y: 0, scale: 0, opacity: 0 }}
-      animate={
-        isMoved
-          ? {
-              left: '50%',
-              top: '50%',
-              translateX: '-50%',
-              translateY: '-50%',
-              scale: 1,
-              opacity: 1,
-              borderRadius: '10%',
-              width: 220,
-              height: 220,
-              position: 'fixed',
-            }
-          : {
-              left: 'auto',
-              translateX: 0,
-              translateY: 0,
-              scale: 1,
-              opacity: 1,
-              position: 'fixed',
-              top: '2.5rem',
-              right: '2.5rem',
-              width: '3rem',
-              height: '3rem',
-              borderRadius: '9999px',
-            }
-      }
-      transition={{ duration: 1.2, ease: 'easeOut', type: 'spring', stiffness: 90, damping: 14 }}
-      className="bg-white text-black cursor-pointer shadow-lg z-50 flex items-center justify-center"
-      onClick={() => setIsMoved(!isMoved)}
-    >
+ <motion.div
+  // Change initial to match the "closed" state (top/right position)
+  initial={false} 
+  animate={
+    isMoved
+      ? {
+          left: '50%',
+          top: '50%',
+          translateX: '-50%',
+          translateY: '-50%',
+          scale: 1,
+          opacity: 1,
+          borderRadius: '10%',
+          width: 220,
+          height: 220,
+          position: 'fixed',
+        }
+      : {
+          left: 'auto',
+          // Explicitly setting these to match the "closed" CSS 
+          // prevents the jump from the center
+          translateX: 0,
+          translateY: 0,
+          scale: 1,
+          opacity: 1,
+          position: 'fixed',
+          top: '2.5rem',
+          right: '2.5rem',
+          width: '3rem',
+          height: '3rem',
+          borderRadius: '9999px',
+        }
+  }
+  transition={{ duration: 1.2, ease: 'easeOut', type: 'spring', stiffness: 90, damping: 14 }}
+  className="bg-white text-black cursor-pointer shadow-lg z-50 flex items-center justify-center"
+  onClick={() => setIsMoved(!isMoved)}
+>
       {isMoved ? (
         <div
           className="absolute top-2 right-2 text-white rounded-2xl text-xl cursor-pointer bg-black"

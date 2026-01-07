@@ -1,47 +1,74 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import ProjectCard from './ProjectCard';
-import img1 from '../assets/images/EE.png';
-import img2 from '../assets/images/booknest.png';
+import React from "react";
+import { motion } from "framer-motion";
+import ProjectCard from "./ProjectCard";
+import img1 from "../assets/images/EE.png";
+import img2 from "../assets/images/booknest.png";
 
-import img3 from '../assets/images/docapp.png';
+import img3 from "../assets/images/docapp.png";
 
 const container = {
   hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], when: 'beforeChildren', staggerChildren: 0.12 }
-  }
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94],
+      when: "beforeChildren",
+      staggerChildren: 0.12,
+    },
+  },
 };
 
 const item = {
   hidden: { opacity: 0, scale: 0.95, y: 20 },
-  show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] } }
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
 };
+
+
 
 const ProjectsSection = () => {
   return (
-    <motion.div
-      className="flex flex-col justify-center sm:p-10 items-center py-12 " id="projects"
-      style={{marginBottom:"100px"}}
+  <motion.div
+      className="relative flex flex-col justify-center sm:p-10 items-center py-12" // Added 'relative'
+      id="projects"
+      style={{ marginBottom: "100px" }}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
+      // Change: Reduced amount and added margin to trigger earlier on Desktop
+      viewport={{ once: true, amount: 0.1, margin: "-100px" }} 
       variants={container}
     >
       {/* Section Title - Styled Like Skills */}
-      <motion.div className="flex flex-col items-center gap-6 mb-10 text-center" variants={item}>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-200 border-b-4 border-gray-200 hover:border-purple-500 pb-2 w-fit">
-          My <span className="text-purple-700">Projects</span>
+      <motion.div
+        className="flex flex-col items-center gap-6 mb-10 text-center"
+        variants={item}
+      >
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-zinc-100 to-zinc-600 tracking-tighter uppercase italic pb-2 w-fit">
+          My{" "}
+          <span className="text-orange-800 drop-shadow-[0_0_10px_rgba(255,0,0,0.5)]">
+            Projects
+          </span>
         </h2>
-        <p className="text-gray-400  text-lg max-w-2xl text-center leading-relaxed" style={{marginBottom:"10px"}}>
-          Some of my favorite works that showcase design, functionality, and creativity
+        <p
+          className="text-zinc-400 text-lg max-w-2xl text-center leading-relaxed"
+          style={{ marginBottom: "10px" }}
+        >
+          Some of my favorite works that showcase design, functionality, and
+          creativity
         </p>
       </motion.div>
 
       {/* Project Cards */}
-      <motion.div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-6 p-8" variants={container}>
+      <motion.div
+        className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-6 p-8"
+        variants={container}
+      >
         <motion.div variants={item}>
           <ProjectCard
             title="Escalate Essence - Luxury Perfume"

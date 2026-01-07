@@ -20,14 +20,14 @@ const Experience = () => {
 
           {/* Centered Title */}
           <div className="flex justify-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-200 border-b-4 pb-2 hover:border-purple-500">
-              Experi<span className="text-purple-600">ence</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-zinc-100 to-zinc-600 tracking-tighter uppercase italic pb-2">
+              Experi<span className="text-orange-800 drop-shadow-[0_0_10px_rgba(255,0,0,0.5)]">ence</span>
             </h2>
           </div>
 
           {/* Paragraph (left-aligned) */}
           <p
-            className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed px-2 sm:px-0"
+            className="text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed px-2 sm:px-0"
             style={{ marginTop: "10px" }}
           >
             Worked as a <span className="text-amber-500">React.js Developer Intern</span> at The Entrepreneurship Network (TEN), contributing to modern frontend development using React.js and Tailwind CSS. Successfully completed the internship and received LOC and LOR.
@@ -47,7 +47,7 @@ const Experience = () => {
                 alt="LOC"
                 className="w-full h-56 object-cover"
               />
-              <p className="text-center text-sm text-gray-400 py-2">
+              <p className="text-center text-sm text-zinc-400 py-2 uppercase tracking-widest">
                 Letter of Completion (LOC)
               </p>
             </div>
@@ -61,7 +61,7 @@ const Experience = () => {
                 alt="LOR"
                 className="w-full h-56 object-cover"
               />
-              <p className="text-center text-sm text-gray-400 py-2">
+              <p className="text-center text-sm text-zinc-400 py-2 uppercase tracking-widest">
                 Letter of Recommendation (LOR)
               </p>
             </div>

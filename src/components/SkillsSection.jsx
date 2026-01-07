@@ -3,29 +3,27 @@ import { motion } from "framer-motion";
 import SkillCard from "./SkillCard";
 
 const skills = [
-  { name: "HTML" },
-  { name: "CSS" },
-  { name: "JavaScript" },
-  { name: "React" },
-  { name: "Tailwind CSS" },
-  { name: "Bootstrap" },
-  { name: "Framer Motion" },
-  { name: "GSAP" },
-
-  { name: "Node.js" },
-  { name: "Express.js" },
-  { name: "Java" },
-  { name: "MySQL" },
-
-  { name: "GitHub" },
-  { name: "VS code" },
-  { name: "Figma" },
+  { name: "HTML", desc: "Forging the iron-clad structure of the web." },
+  { name: "CSS", desc: "Draping the architecture in aesthetics and royal style." },
+  { name: "JavaScript", desc: "Infusing the soul and movement into the digital stone." },
+  { name: "React", desc: "Constructing modular kingdoms that grow and adapt." },
+  { name: "Tailwind CSS", desc: "Striking with lightning speed and utility-first precision." },
+  { name: "Bootstrap", desc: "Defending layouts with time-tested responsive armor." },
+  { name: "Framer Motion", desc: "Mastering the art of cinematic motion and flow." },
+  { name: "GSAP", desc: "Orchestrating epic timelines of visual grandeur." },
+  { name: "Node.js", desc: "The silent engine powering the vast backend empires." },
+  { name: "Express.js", desc: "Connecting the realms with swift and secure gateways." },
+  { name: "Java", desc: "Solid, ancient, and unbreakable enterprise logic." },
+  { name: "MySQL", desc: "The deep vault where the kingdom's truth is stored." },
+  { name: "GitHub", desc: "The grand chronicle of every battle fought in code." },
+  { name: "VS code", desc: "The forge where ideas are hammered into reality." },
+  { name: "Figma", desc: "The visionary scroll where blueprints are born." },
 ];
 
 const learning = [
-  { name: "Next.js" },
-  { name: "TypeScript" },
-  { name: "Three.js" },
+  { name: "Next.js", desc: "Mastering the future of full-stack conquest." },
+  { name: "TypeScript", desc: "Adding sacred scripts for error-free reliability." },
+  { name: "Three.js", desc: "Opening the gates to the 3rd dimension." },
 ];
 
 const SkillsSection = () => {
@@ -34,44 +32,34 @@ const SkillsSection = () => {
   const technologies = skills.slice(12, 15);
 
   return (
-    <div 
-    id="skills"
-    className="flex flex-col gap-10 justify-center items-center w-full "style={{padding:"20px"}}>
-      {/* Heading */}
+    <div id="skills" className="flex flex-col gap-12 justify-center items-center w-full  py-20">
+      {/* Cinematic Heading */}
       <motion.div
-        className="mb-6 sm:mb-8 text-center"
-        initial={{ opacity: 0, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 1 }}
+        className="text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-200 inline-block border-b-4 hover:border-purple-500 pb-2">
-          What I <span className="text-purple-700">Work With</span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-zinc-100 to-zinc-600 tracking-tighter uppercase italic pb-2 w-fit">
+          Mastery & <span className="text-orange-800 drop-shadow-[0_0_10px_rgba(255,0,0,0.5)]">Arsenal</span>
         </h2>
+        <div className="h-1 w-24 bg-orange-900 mx-auto mt-4 blur-[1px]" />
       </motion.div>
 
       {/* Content Wrapper */}
-      <div className="flex flex-col gap-6 w-full px-4 md:px-8">
-
-        {/* Frontend + Backend Row */}
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-center w-full">
-          <SkillCard title="Frontend Skills" items={frontend} />
-          <SkillCard title="Backend Skills" items={backend} />
+      <div className="flex flex-col gap-8 w-full px-4 md:px-8">
+        <div className="flex flex-col md:flex-row gap-8 justify-center items-center w-full">
+          <SkillCard title="The Vanguard (Frontend)" items={frontend} />
+          <SkillCard title="The Foundation (Backend)" items={backend} />
         </div>
 
-        {/* Technologies */}
-        <div className="flex justify-center w-full">
-          <SkillCard title="Technologies" items={technologies} />
+         <div className="flex flex-col md:flex-row gap-8 justify-center items-center w-full">
+          <SkillCard title="The Tools of War" items={technologies} />
+           <SkillCard title="Future Conquests" items={learning} />
         </div>
 
-        {/* Learning Section */}
-        <div className="flex flex-col gap-3 w-full text-center">
-          <h1 className="text-xl font-semibold text-gray-200">Currently Learning</h1>
-          <div className="flex justify-center">
-            <SkillCard title="Learning..." items={learning} />
-          </div>
-        </div>
-
+      
       </div>
     </div>
   );

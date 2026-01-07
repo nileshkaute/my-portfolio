@@ -5,6 +5,8 @@ import ScreenLoader from './components/ScreenLoader.jsx';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import CustomCursor from "./components/CustomCursor.jsx";
+import Footer from "./components/Footer.jsx";
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -30,7 +32,7 @@ const App = () => {
   return (
     <>
       {loading && <ScreenLoader />}
-
+       
       {!loading && (
         <>
           <ReactLenis root />
@@ -39,6 +41,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
+         <Footer/>
         </>
       )}
     </>

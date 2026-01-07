@@ -9,7 +9,7 @@
 body {
   background-color: black;
   color: white;
-  font-family: sans-serif;
+  font-family: gilroy;
 }
 html {
   scroll-behavior: smooth;
@@ -43,4 +43,10 @@ html {
 
 * {
   cursor: none;
+}
+
+
+.hover-target:hover {
+  transform: translate(5px, -5px); /* Button moves slightly */
+  transition: transform 0.2s ease-out;
 }
