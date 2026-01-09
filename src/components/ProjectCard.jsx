@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const ProjectCard = ({ title, image, techs, description, link }) => {
   return (
   
@@ -59,6 +60,9 @@ const ProjectCard = ({ title, image, techs, description, link }) => {
           </a>
         </div>
       </div>
+
+
+    
     </div>
   );
 };

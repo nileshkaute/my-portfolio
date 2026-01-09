@@ -17,36 +17,4 @@ html {
 
 
 
-.brush-bg {
-  
-  position: relative;
-  color: black;
-}
 
-
-
-.brush-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: white;
-  z-index: -1;
-
-  /* Brush effect */
-  filter: blur(2px);
-  clip-path: polygon(
-    0% 20%, 10% 0%, 30% 5%, 50% 0%, 70% 10%, 90% 0%, 100% 25%,
-    95% 50%, 100% 75%, 85% 100%, 65% 95%, 45% 100%, 25% 90%, 5% 100%, 0% 75%
-  );
-  border-radius: 4px;
-}
-
-* {
-  cursor: none;
-}
-
-
-.hover-target:hover {
-  transform: translate(5px, -5px); /* Button moves slightly */
-  transition: transform 0.2s ease-out;
-}
