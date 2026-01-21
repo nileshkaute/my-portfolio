@@ -129,7 +129,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <div ref={componentRef} className="w-full min-h-screen overflow-x-hidden" onMouseMove={handleMouseMove}>
+    <div ref={componentRef} className="w-full min-h-screen overflow-x-hidden" onMouseMove={handleMouseMove}
+     style={{paddingBottom:"15px"}}
+    >
+      
       <section 
         ref={triggerRef}
         className="relative flex flex-col items-center justify-center w-full h-screen overflow-hidden"
