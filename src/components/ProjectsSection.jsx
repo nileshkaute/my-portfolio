@@ -57,7 +57,8 @@ const ProjectsSection = () => {
 
   return (
     <motion.div
-      className="relative flex flex-col items-center py-20 w-full"
+      className="relative flex flex-col items-center w-full"
+      style={{ paddingTop: "80px", paddingBottom: "80px", marginBottom: "40px" }}
       id="projects"
       initial="hidden"
       whileInView="show"
