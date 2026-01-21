@@ -32,7 +32,7 @@ const SkillsSection = () => {
   const technologies = skills.slice(12, 15);
 
   return (
-    <div id="skills" className="flex flex-col gap-12 justify-center items-center w-full  py-20">
+    <div id="skills" className="flex flex-col gap-12 justify-center items-center w-full" style={{ paddingTop: "80px", paddingBottom: "80px", marginBottom: "40px" }}>
       {/* Cinematic Heading */}
       <motion.div
         className="text-center"
