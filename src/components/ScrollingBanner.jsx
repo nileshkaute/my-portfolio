@@ -7,7 +7,7 @@ const ScrollingBanner = () => {
 
   return (
     /* h-screen: This div now occupies the full height of the viewport */
-    <div className="relative w-full h-screen overflow-hidden bg-[#1c120f] flex items-center justify-center">
+    <div className="relative w-full h-screen overflow-hidden  flex items-center justify-center">
       
       {/* -rotate-12: An aggressive tilt to match the brewery style 
           scale-150: Ensures the edges of the tilted container stay off-screen 
