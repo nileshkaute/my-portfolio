@@ -5,8 +5,8 @@ const Experience = () => {
   return (
     <motion.section
       id="experience"
-      style={{ marginBottom: "40px",padding:"10px" }}
-      className="flex justify-center py-20 px-4 sm:px-8 md:px-12 lg:px-20"
+      style={{ marginBottom: "80px", padding: "10px", paddingTop: "80px", paddingBottom: "80px" }}
+      className="flex justify-center px-4 sm:px-8 md:px-12 lg:px-20"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
