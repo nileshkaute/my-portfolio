@@ -46,7 +46,8 @@ const works = [
   return (
     <div className="bg-mocha-900 text-ivory min-h-screen flex flex-col font-['gilroy']">
       <main 
-        className="flex-grow flex flex-col items-center pt-32 pb-40 px-6 md:px-12"
+        className="flex-grow flex flex-col items-center px-6 md:px-12"
+        style={{padding: "10px", paddingTop: "80px" }}
         onMouseMove={handleMouseMove}
       >
         <div className="w-full max-w-[1400px]">
