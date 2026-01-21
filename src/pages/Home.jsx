@@ -6,7 +6,7 @@ import Button from "../components/Button";
 import SkillsSection from "../components/SkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
 import AboutSection from "../components/AboutSection";
-import Divider from "../components/Divider";
+// import Divider from "../components/Divider";
 import Experience from "../components/Exprience";
 import Hero from "../components/Hero";
 import OtherWork from "../components/OtherWork";
@@ -40,18 +40,18 @@ const Home = () => {
       <Hero/>
 
       {/* Divider */}
-      <Divider />
+      {/* <Divider /> */}
 
       <AboutSection />
 
       {/* Divider */}
-      <Divider />
+      {/* <Divider /> */}
 
       {/* Skills Section */}
       <SkillsSection/>
      
       {/* Divider */}
-      <Divider />
+      {/* <Divider /> */}
 
       {/* Project Section */}
       <ProjectsSection/>      
@@ -63,7 +63,7 @@ const Home = () => {
       <Experience/> 
 
       {/* Divider */}
-      <Divider compact />
+      {/* <Divider  /> */}
 
       <OtherWork/>  
      
