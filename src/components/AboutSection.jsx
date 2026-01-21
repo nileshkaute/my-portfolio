@@ -53,12 +53,12 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <div ref={pinTriggerRef} className="bg-black">
+    <div ref={pinTriggerRef} className="bg-black mb-20">
       <motion.section
         ref={sectionRef}
         id="about"
-        className="flex flex-col md:flex-row items-center justify-center py-16 px-8 sm:px-10 md:px-12 h-screen relative overflow-hidden"
-        style={{ margin: "15px" }}
+        className="flex flex-col md:flex-row items-center justify-center px-8 sm:px-10 md:px-12 min-h-screen relative overflow-hidden"
+        style={{ margin: "15px", paddingTop: "80px", paddingBottom: "80px" }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
