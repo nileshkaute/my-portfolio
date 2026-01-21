@@ -1,10 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import img1 from "../assets/images/EE.png";
-import img2 from "../assets/images/booknest.png";
-
-import img3 from "../assets/images/docapp.png";
+import img1 from "/images/EE.png";
+import img2 from "/images/booknest.png";
+import img3 from "/images/docapp.png";
 
 const container = {
   hidden: { opacity: 0, y: 20 },
@@ -15,7 +14,7 @@ const container = {
       duration: 0.8,
       ease: [0.25, 0.46, 0.45, 0.94],
       when: "beforeChildren",
-      staggerChildren: 0.12,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -26,79 +25,72 @@ const item = {
     opacity: 1,
     scale: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.6 },
   },
 };
 
-
-
 const ProjectsSection = () => {
+  const projects = [
+    {
+      title: "Escalate Essence",
+      image: img1,
+      techs: ["HTML", "CSS", "JS", "GSAP"],
+      description: "A luxury perfume brand website featuring smooth GSAP animations and a full authentication system for an immersive user journey.",
+      link: "https://eclat-essence-perfume.vercel.app/",
+    },
+    {
+      title: "BookNest Shop",
+      image: img2,
+      techs: ["HTML", "CSS", "JavaScript"],
+      description: "A clean and responsive online bookstore including a shopping cart and modern UI designed for high performance and readability.",
+      link: "https://booknes-t.netlify.app/",
+    },
+    {
+      title: "DocApp Manager",
+      image: img3,
+      techs: ["React", "Framer", "IndexedDB"],
+      description: "A powerful document manager allowing users to store and manage files securely via IndexedDB with high-end motion animations.",
+      link: "https://personaldocapp.netlify.app/",
+    },
+
+  ];
+
   return (
-  <motion.div
-      className="relative flex flex-col justify-center sm:p-10 items-center py-12" // Added 'relative'
+    <motion.div
+      className="relative flex flex-col items-center py-20 w-full"
       id="projects"
-      style={{ marginBottom: "100px" }}
       initial="hidden"
       whileInView="show"
-      // Change: Reduced amount and added margin to trigger earlier on Desktop
-      viewport={{ once: true, amount: 0.1, margin: "-100px" }} 
+      viewport={{ once: true, amount: 0.1 }}
       variants={container}
     >
-      {/* Section Title - Styled Like Skills */}
+      {/* HEADER SECTION - REMAINING UNCHANGED */}
       <motion.div
-        className="flex flex-col items-center gap-6 mb-10 text-center"
+        className="flex flex-col items-center gap-6 mb-40 text-center"
         variants={item}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-zinc-100 to-zinc-600 tracking-tighter uppercase italic pb-2 w-fit">
+        <h2 className="text-5xl font-anton uppercase tracking-tight outline-text">
           My{" "}
-          <span className="text-orange-800 drop-shadow-[0_0_10px_rgba(255,0,0,0.5)]">
+          <span className="text-gold drop-shadow-[0_0_10px_rgba(201,162,77,0.5)]">
             Projects
           </span>
         </h2>
-        <p
-          className="text-zinc-400 text-lg max-w-2xl text-center leading-relaxed"
-          style={{ marginBottom: "10px" }}
-        >
-          Some of my favorite works that showcase design, functionality, and
-          creativity
+        <p className="text-stone text-lg max-w-2xl text-center leading-relaxed">
+          Some of my favorite works that showcase design, functionality, and creativity
         </p>
       </motion.div>
 
-      {/* Project Cards */}
-      <motion.div
-        className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-6 p-8"
-        variants={container}
-      >
-        <motion.div variants={item}>
-          <ProjectCard
-            title="Escalate Essence - Luxury Perfume"
-            image={img1}
-            techs={["HTML", "CSS", "JavaScript", "GSAP"]}
-            description="A luxury perfume brand website featuring smooth GSAP animations, responsive design, and full authentication system for an immersive user experience."
-            link="https://eclat-essence-perfume.vercel.app/"
-          />
-        </motion.div>
-
-        <motion.div variants={item}>
-          <ProjectCard
-            title="BookNest - Online Bookstore"
-            image={img2}
-            techs={["HTML", "CSS", "JavaScript"]}
-            description="A clean and responsive online bookstore built using HTML, CSS, and JavaScript. Includes a shopping cart, product filtering, and modern UI for readers."
-            link="https://booknes-t.netlify.app/"
-          />
-        </motion.div>
-
-        <motion.div variants={item}>
-          <ProjectCard
-            title="DocApp - Document Manager"
-            image={img3}
-            techs={["React", "Framer Motion", "IndexedDB"]}
-            description="A powerful document manager built in React with Framer Motion animations. It allows users to store, view, and manage files securely using IndexedDB."
-            link="https://personaldocapp.netlify.app/"
-          />
-        </motion.div>
-      </motion.div>
+      {/* PROJECT FLOW SECTION - CENTERED */}
+      <div className="w-full flex flex-col items-center">
+        {projects.map((proj, index) => (
+          <motion.div key={index} variants={item} className="w-full flex justify-center">
+            <ProjectCard 
+              {...proj} 
+              reverse={index % 2 !== 0} 
+            />
+          </motion.div>
+        ))}
+      </div>
     </motion.div>
   );
 };

@@ -44,7 +44,7 @@ const works = [
   };
 
   return (
-    <div className="bg-[black] text-white min-h-screen flex flex-col font-['gilroy']">
+    <div className="bg-mocha-900 text-ivory min-h-screen flex flex-col font-['gilroy']">
       <main 
         className="flex-grow flex flex-col items-center pt-32 pb-40 px-6 md:px-12"
         onMouseMove={handleMouseMove}
@@ -52,11 +52,11 @@ const works = [
         <div className="w-full max-w-[1400px]">
           {/* Section Heading from original style */}
           <h1 className="text-[4.6vmax] font-bold mb-14">
-            watch my <span className="text-orange-700">more</span> artwork.
+            watch my <span className="text-gold">more</span><span className="text-5xl  font-anton uppercase tracking-tight outline-text"> work</span>
           </h1>
 
           {/* Table Header aligned with the grid */}
-          <div className="grid grid-cols-[12%_44%_44%] w-full text-[10px] uppercase tracking-[0.3em] text-zinc-500 pb-4 px-1">
+          <div className="grid grid-cols-[12%_44%_44%] w-full text-[10px] uppercase tracking-[0.3em] text-stone pb-4 px-1">
             <span>Year</span>
             <span>Project</span>
             <span className="text-right">Industry</span>

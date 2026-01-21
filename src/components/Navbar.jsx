@@ -57,12 +57,12 @@ const Navbar = () => {
         }
   }
   transition={{ duration: 1.2, ease: 'easeOut', type: 'spring', stiffness: 90, damping: 14 }}
-  className="bg-white text-black cursor-pointer shadow-lg z-50 flex items-center justify-center"
+  className="bg-ivory text-mocha-900 cursor-pointer shadow-lg z-50 flex items-center justify-center border-2"
   onClick={() => setIsMoved(!isMoved)}
 >
       {isMoved ? (
         <div
-          className="absolute top-2 right-2 text-white rounded-2xl text-xl cursor-pointer bg-black"
+          className="absolute top-2 right-2 text-ivory rounded-2xl text-xl cursor-pointer bg-mocha-900"
           onClick={(e) => {
             e.stopPropagation();
             setIsMoved(false);
@@ -71,13 +71,13 @@ const Navbar = () => {
           <X />
         </div>
       ) : (
-        <div className="flex items-center justify-center w-full h-full text-black p-1 text-2xl">
+        <div className="flex items-center justify-center w-full h-full text-mocha-900 p-1 text-2xl">
           <Menu />
         </div>
       )}
 
       {isMoved && (
-        <div className="flex flex-col items-center justify-center gap-3 mt-8 text-black text-sm">
+        <div className="flex flex-col items-center justify-center gap-3 mt-8 text-mocha-900 text-sm">
           <Link to="/#home" className="hover:underline" onClick={() => setIsMoved(false)}>
             Home
           </Link>

@@ -10,6 +10,7 @@ import Divider from "../components/Divider";
 import Experience from "../components/Exprience";
 import Hero from "../components/Hero";
 import OtherWork from "../components/OtherWork";
+import ScrollingBanner from "../components/ScrollingBanner";
 
 const Home = () => {
   const [showBoxes, setShowBoxes] = useState(false);
@@ -56,7 +57,8 @@ const Home = () => {
       <ProjectsSection/>      
 
       {/* Divider */}
-      <Divider />
+      {/* <Divider /> */}
+      <ScrollingBanner/>
 
       <Experience/> 
 

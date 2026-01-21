@@ -7,7 +7,7 @@ const Divider = ({ compact = false }) => {
       style={{ marginTop: compact ? "60px" : "120px", marginBottom: compact ? "60px" : "120px" }}
     >
       <hr
-        className="w-[90%] max-w-4xl border-t border-white/20"
+        className="w-[90%] max-w-4xl border-t border-gold/20"
         style={{ borderTopWidth: "1px" }}
       />
     </div>

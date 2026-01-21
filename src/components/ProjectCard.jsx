@@ -1,68 +1,61 @@
 import React from "react";
 
-
-const ProjectCard = ({ title, image, techs, description, link }) => {
+const ProjectCard = ({ title, image, techs, description, link, reverse }) => {
   return (
-  
-    <div className="bg-[#0a0a0a] border-2 w-[90vw] sm:w-95 min-h-110 border-zinc-800 rounded-2xl overflow-hidden mb-8 relative backdrop-blur-md transition-all duration-500 hover:shadow-2xl hover:shadow-orange-900/25 hover:border-orange-900 group mx-auto">
-      {/* Gradient overlay effect */}
-      <div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
-
-      {/* Image Container */}
-      <div className="relative overflow-hidden h-[180px]">
-        <img
-          src={image}
-          alt={title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-        /> 
+    <div className={`flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} items-center justify-center gap-12 md:gap-24 mb-60 w-full max-w-7xl mx-auto px-6 min-h-[70vh] antialiased`}>
+      
+      {/* Image Side - Styled with a "Frame" effect */}
+      <div className="w-full md:w-1/2 flex justify-center">
+        {/* Outer Frame: Subtle border and glow */}
+        <div className="relative w-full aspect-[16/10] p-1 rounded-2xl bg-gradient-to-tr from-zinc-800 to-zinc-700/50 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:scale-[1.02]">
+          
+          {/* Inner Frame: Clipping and glass effect */}
+          <div className="relative w-full h-full overflow-hidden rounded-xl bg-zinc-900 flex items-center justify-center border border-white/5">
+            <img
+              src={image}
+              alt={title}
+              className="w-full  object-cover opacity-90 hover:opacity-100 transition-opacity duration-500"
+            />
+            
+            {/* Glossy Overlay (Brewery Style) */}
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-white/5 to-transparent opacity-50" />
+          </div>
+        </div>
       </div>
 
-      {/* Card Body */}
-      <div className="relative z-10 gap-3" style={{ padding: "15px" }}>
-        <h3
-          className="text-xl font-bold mb-3 text-zinc-200 group-hover:text-orange-500 transition-colors duration-500 uppercase tracking-tight"
-          style={{ margin: "3px 3px" }}
-        >
-          {title}
-        </h3>
-
-        {/* Description */}
-        <p
-          className="text-zinc-400 mb-4 leading-relaxed h-20 overflow-hidden"
-          style={{ margin: "15px 0 3px 2px" }}
-        >
-          {description}
-        </p>
-
-         {/* Tech Badges */}
-        <div className="mb-3 flex flex-wrap gap-2" style={{ margin: "3px 3px" }}>
+      {/* Content Side */}
+      <div className={`w-full md:w-1/2 flex flex-col ${reverse ? 'md:items-end md:text-right' : 'md:items-start md:text-left'} items-center text-center`}>
+        
+        {/* Tech Stack */}
+        <div className="flex flex-wrap gap-2 mb-6">
           {techs.map((tech, index) => (
-            <span
-              key={index}
-              className="inline-block border border-zinc-800 text-zinc-400 text-xs rounded-md hover:text-orange-500 hover:border-orange-800 hover:shadow-[0_0_15px_rgba(255,165,0,0.2)] transition-all duration-500 hover:-translate-y-0.5"
-              style={{ padding: "5px 8px", margin: "15px 0 3px 2px" }}
-            >
-              {tech}
+            <span key={index} className="text-[10px] uppercase tracking-[0.5em] text-zinc-500 font-bold whitespace-nowrap">
+              {tech} {index !== techs.length - 1 && "•"}
             </span>
           ))}
         </div>
 
-        {/* Project Links */}
-        <div className="flex gap-3 mt-4" style={{ margin: "20px 0 2px 2px" }}>
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ padding: "5px 8px" }}
-            className="inline-flex items-center px-5 py-2.5 border-2 border-orange-900 text-orange-500 rounded-md text-sm font-bold uppercase tracking-widest transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-900/40 hover:border-orange-700 hover:text-orange-400"
-          >
-            Live Demo <i className="fas fa-external-link-alt ml-2 text-xs"></i>
-          </a>
-        </div>
+        {/* Title */}
+        <h3 className="text-6xl md:text-8xl font-anton uppercase tracking-tighter mb-8 leading-[0.85] text-white max-w-[500px]">
+          {title}
+        </h3>
+        
+        {/* Description */}
+        <p className="text-zinc-400 text-lg md:text-xl leading-relaxed mb-12 max-w-[450px]">
+          {description}
+        </p>
+
+        {/* Button */}
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{padding:"5px"}}
+          className="inline-flex items-center border-2 border-orange-600 text-orange-500 rounded-sm text-xs font-bold uppercase tracking-[0.3em] transition-all duration-300 hover:bg-orange-600 hover:text-white"
+        >
+          View Live Demo
+        </a>
       </div>
-
-
-    
     </div>
   );
 };

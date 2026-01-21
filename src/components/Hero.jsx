@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import profileImage from "../assets/images/prof.png";
+import profileImage from "/images/prof.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,6 +69,7 @@ const Hero = () => {
             pin: true,
             scrub: 1,
             anticipatePin: 1,
+          
           },
         });
 
@@ -128,7 +129,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div ref={componentRef} className="bg-black w-full min-h-screen overflow-x-hidden" onMouseMove={handleMouseMove}>
+    <div ref={componentRef} className="w-full min-h-screen overflow-x-hidden" onMouseMove={handleMouseMove}>
       <section 
         ref={triggerRef}
         className="relative flex flex-col items-center justify-center w-full h-screen overflow-hidden"
@@ -137,27 +138,27 @@ const Hero = () => {
         
         {/* Background UI Decor */}
         <div ref={floatingElementsRef} className="absolute inset-0 pointer-events-none">
-            <div className="ui-point absolute top-[15%] left-[5%] font-mono text-[10px] text-orange-700/60 leading-relaxed">
+            <div className="ui-point absolute top-[15%] left-[5%] font-mono text-[10px] text-gold/60 leading-relaxed">
                 <p>OBJ_DATA: 0x4F2A</p>
-                <div className="w-12 h-[1px] bg-orange-900/40 mt-1"></div>
+                <div className="w-12 h-[1px] bg-gold/40 mt-1"></div>
             </div>
 
-            <div className="ui-point absolute bottom-[20%] right-[5%] font-mono text-[10px] text-orange-700/60 text-right">
+            <div className="ui-point absolute bottom-[20%] right-[5%] font-mono text-[10px] text-gold/60 text-right">
                 <p>LOC: 18.6298° N</p>
-                <div className="w-12 h-[1px] bg-orange-900/40 mt-1 ml-auto"></div>
+                <div className="w-12 h-[1px] bg-gold/40 mt-1 ml-auto"></div>
             </div>
 
-            <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-orange-900/5 blur-[120px] rounded-full"></div>
-            <div className="absolute bottom-[-10%] left-[-5%] w-[30vw] h-[30vw] bg-orange-900/5 blur-[100px] rounded-full"></div>
+            <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-gold/5 blur-[120px] rounded-full"></div>
+            <div className="absolute bottom-[-10%] left-[-5%] w-[30vw] h-[30vw] bg-gold/5 blur-[100px] rounded-full"></div>
         </div>
 
         {/* Animated Headline */}
         <div className="hidden lg:flex absolute inset-0 justify-center items-center pointer-events-none z-50">
           <h1 
             ref={headlineRef}
-            className="text-[4rem] font-black text-orange-700 opacity-0 whitespace-nowrap px-4 uppercase italic tracking-tighter"
+            className="text-[4rem] font-black text-gold opacity-0 whitespace-nowrap px-4 uppercase italic tracking-tighter"
           >
-            <span className="text-white">From Logic to Life—</span><span className="text-orange-700 drop-shadow-[0_0_10px_rgba(255,0,0,0.5)]">I Build What You Imagine.</span>
+            <span className="text-ivory">From Logic to Life—</span><span className="text-gold drop-shadow-[0_0_10px_rgba(201,162,77,0.5)]">I Build What You Imagine.</span>
           </h1>
         </div>
 
@@ -177,7 +178,7 @@ const Hero = () => {
             <h2 
               className="text-[18vw] lg:text-[16vw] font-black leading-none text-transparent whitespace-nowrap uppercase italic"
               style={{ 
-                WebkitTextStroke: "1px rgba(194, 65, 12, 0.25)",
+                WebkitTextStroke: "1px rgba(201, 162, 77, 0.25)",
                 letterSpacing: "-0.02em"
               }}
             >
@@ -190,18 +191,18 @@ const Hero = () => {
             
             {/* Scroll Prompt */}
             <div ref={scrollPromptRef} className="absolute z-50 flex flex-col items-center pointer-events-none hidden lg:flex">
-                <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-orange-600 to-transparent mb-4"></div>
-                <p className="text-orange-500 font-mono text-[11px] tracking-[0.5em] uppercase animate-pulse">Scroll to Discover</p>
-                <div className="mt-4 w-5 h-8 border border-orange-700/50 rounded-full flex justify-center p-1">
-                    <div className="w-1 h-1 bg-orange-500 rounded-full animate-bounce"></div>
+                <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-gold to-transparent mb-4"></div>
+                <p className="text-gold font-mono text-[11px] tracking-[0.5em] uppercase animate-pulse">Scroll to Discover</p>
+                <div className="mt-4 w-5 h-8 border border-gold/50 rounded-full flex justify-center p-1">
+                    <div className="w-1 h-1 bg-gold rounded-full animate-bounce"></div>
                 </div>
             </div>
 
             {/* Circle Backdrop - Removed opacity-0 */}
-            <div ref={circleRef} className="absolute w-[280px] h-[280px] md:w-[500px] md:h-[500px] lg:w-[620px] lg:h-[620px] border border-orange-700/20 bg-orange-900/5 rounded-full -z-10" />
+            <div ref={circleRef} className="absolute w-[280px] h-[280px] md:w-[500px] md:h-[500px] lg:w-[620px] lg:h-[620px] border border-gold/20 bg-mocha-900/5 rounded-full -z-10" />
 
             {/* Profile Image - Removed opacity-0 */}
-            <div className="relative inline-block p-[4px] lg:p-[8px] rounded-full border-2 border-orange-800/30 overflow-hidden bg-gradient-to-b from-orange-900/20 to-transparent" ref={profileRef}>
+            <div className="relative inline-block p-[4px] lg:p-[8px] rounded-full border-2 border-gold/30 overflow-hidden bg-gradient-to-b from-mocha-900/20 to-transparent" ref={profileRef}>
               <img
                 src={profileImage}
                 alt="Nilesh"
@@ -212,14 +213,14 @@ const Hero = () => {
             </div>
 
             <div className="lg:hidden mt-6 flex flex-col items-center">
-                <span className="text-orange-700 text-[12px] tracking-[0.5em] uppercase font-bold mb-2">Nilesh Kaute</span>
-                <div className="w-10 h-[1px] bg-orange-900/50"></div>
+                <span className="text-gold text-[12px] tracking-[0.5em] uppercase font-bold mb-2">Nilesh Kaute</span>
+                <div className="w-10 h-[1px] bg-gold/50"></div>
             </div>
 
-            <div aria-hidden="true" className="hidden lg:block absolute -left-32 top-1/2 -rotate-90 text-orange-500/20 text-[10px] tracking-[1em] uppercase font-bold" style={{ contentVisibility: 'auto' }}>
+            <div aria-hidden="true" className="hidden lg:block absolute -left-32 top-1/2 -rotate-90 text-gold/20 text-[10px] tracking-[1em] uppercase font-bold" style={{ contentVisibility: 'auto' }}>
               Java Full Stack
             </div>
-            <div aria-hidden="true" className="hidden lg:block absolute -right-32 top-1/2 rotate-90 text-orange-500/20 text-[10px] tracking-[1em] uppercase font-bold" style={{ contentVisibility: 'auto' }}>
+            <div aria-hidden="true" className="hidden lg:block absolute -right-32 top-1/2 rotate-90 text-gold/20 text-[10px] tracking-[1em] uppercase font-bold" style={{ contentVisibility: 'auto' }}>
               Creative Tech
             </div>
           </div>

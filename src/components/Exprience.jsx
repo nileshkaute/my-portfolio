@@ -20,17 +20,17 @@ const Experience = () => {
 
           {/* Centered Title */}
           <div className="flex justify-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-zinc-100 to-zinc-600 tracking-tighter uppercase italic pb-2">
-              Experi<span className="text-orange-800 drop-shadow-[0_0_10px_rgba(255,0,0,0.5)]">ence</span>
+            <h2 className="text-5xl  font-anton uppercase tracking-tight outline-text">
+              Experi<span className="text-gold drop-shadow-[0_0_10px_rgba(201,162,77,0.5)]">ence</span>
             </h2>
           </div>
 
           {/* Paragraph (left-aligned) */}
           <p
-            className="text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed px-2 sm:px-0"
+            className="text-warmGray text-sm sm:text-base md:text-lg leading-relaxed px-2 sm:px-0"
             style={{ marginTop: "10px" }}
           >
-            Worked as a <span className="text-amber-500">React.js Developer Intern</span> at The Entrepreneurship Network (TEN), contributing to modern frontend development using React.js and Tailwind CSS. Successfully completed the internship and received LOC and LOR.
+            Worked as a <span className="text-gold">React.js Developer Intern</span> at The Entrepreneurship Network (TEN), contributing to modern frontend development using React.js and Tailwind CSS. Successfully completed the internship and received LOC and LOR.
           </p>
         </div>
 

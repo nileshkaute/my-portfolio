@@ -41,10 +41,10 @@ const SkillsSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 1.5 }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-zinc-100 to-zinc-600 tracking-tighter uppercase italic pb-2 w-fit">
-          Mastery & <span className="text-orange-800 drop-shadow-[0_0_10px_rgba(255,0,0,0.5)]">Arsenal</span>
+        <h2 className="text-5xl  font-anton uppercase tracking-tight outline-text">
+          Mastery & <span className="text-gold drop-shadow-[0_0_10px_rgba(201,162,77,0.5)]">Arsenal</span>
         </h2>
-        <div className="h-1 w-24 bg-orange-900 mx-auto mt-4 blur-[1px]" />
+        <div className="h-1 w-24 bg-gold mx-auto mt-4 blur-[1px]" />
       </motion.div>
 
       {/* Content Wrapper */}
