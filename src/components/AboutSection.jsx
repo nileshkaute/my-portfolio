@@ -53,7 +53,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <div ref={pinTriggerRef} className="bg-black mb-20">
+    <div ref={pinTriggerRef} className=" mb-20">
       <motion.section
         ref={sectionRef}
         id="about"
