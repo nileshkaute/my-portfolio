@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SkillRow from "./SkillRow";
 
-
+// Register the plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const SkillsSection = () => {
+  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
+
   const frontend = [
     { name: "HTML", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "CSS", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
@@ -32,8 +38,52 @@ const SkillsSection = () => {
     { name: "Figma", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
   ];
 
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      // Select all skill rows within the container
+      const rows = gsap.utils.toArray(".skill-row-trigger");
+
+      rows.forEach((row, i) => {
+        gsap.fromTo(row, 
+          { opacity: 0, x: -50 }, 
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: row,
+              start: "top 85%", // Starts when the row is near the bottom
+              end: "top 50%",   // Ends when row reaches the middle
+              scrub: true,      // Ties animation to scroll speed
+              toggleActions: "play none none reverse",
+            }
+          }
+        );
+      });
+
+      // Optional: Pin the whole section while scrolling through rows
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "+=1000", // Adjust this value to control how long it stays pinned
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+      });
+
+    }, sectionRef);
+
+    return () => ctx.revert(); // Clean up on unmount
+  }, []);
+
   return (
-    <div id="skills" className="flex flex-col gap-20 justify-center items-center w-full bg-[#0a0a0a]" style={{ paddingTop: "100px", paddingBottom: "100px" }}>
+    <div 
+      id="skills" 
+      ref={sectionRef}
+      className="flex flex-col gap-20 justify-center items-center w-full bg-[#0a0a0a]" 
+      style={{ paddingTop: "100px", paddingBottom: "100px" }}
+    >
       
       <motion.div
         className="text-center"
@@ -48,10 +98,11 @@ const SkillsSection = () => {
         <div className="h-1 w-24 bg-gold mx-auto mt-4 blur-[1px]" />
       </motion.div>
 
-      <div className="flex flex-col gap-14 w-full px-6 md:px-20 max-w-7xl">
-        <SkillRow label="frontend" items={frontend} />
-        <SkillRow label="backend" items={backend} />
-        <SkillRow label="exploring" items={exploring} />
+      <div ref={containerRef} className="flex flex-col gap-14 w-full px-6 md:px-20 max-w-7xl">
+        {/* Added the 'skill-row-trigger' class so GSAP can target them */}
+        <div className="skill-row-trigger"><SkillRow label="frontend" items={frontend} /></div>
+        <div className="skill-row-trigger"><SkillRow label="backend" items={backend} /></div>
+        <div className="skill-row-trigger"><SkillRow label="exploring" items={exploring} /></div>
       </div>
 
     </div>
