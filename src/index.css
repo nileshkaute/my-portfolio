@@ -23,3 +23,27 @@ html {
   color: transparent;
   -webkit-text-stroke: 1.5px #bebdbd;
 }
+
+
+
+/* This targets the entire window */
+html, body {
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* IE/Edge */
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;                    /* Chrome, Safari, Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Optional: If the scrollbar is coming from a specific wrapper */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
