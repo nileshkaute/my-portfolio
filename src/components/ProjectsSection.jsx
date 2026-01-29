@@ -6,8 +6,8 @@ import ProjectCard from "./ProjectCard";
 
 // Video imports
 import video1 from "/videos/EE1.mp4";
-import video2 from "/videos/1.mp4";
-import video3 from "/videos/1.mp4";
+import video2 from "/videos/BookNest.mp4";
+import video3 from "/videos/media3.mp4";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,39 +63,46 @@ const ProjectsSection = () => {
     },
   ];
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: mainRef.current,
-        start: "top top",
-        end: `+=${projects.length * 100}%`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 1,
-      });
+useLayoutEffect(() => {
+  let ctx = gsap.context(() => {
+    // 1. Main Pinning Logic
+    ScrollTrigger.create({
+      trigger: mainRef.current,
+      start: "top top",
+      // Shortened the end distance so the section doesn't stay locked too long
+      end: `+=${projects.length * 40}%`, 
+      pin: true,
+      pinSpacing: true,
+    });
 
-      const projectCards = gsap.utils.toArray(".project-wrapper");
-      projectCards.forEach((card, i) => {
-        gsap.fromTo(
-          card,
-          { opacity: 0, y: 100, scale: 0.9 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            scrollTrigger: {
-              trigger: card,
-              start: "top 80%",
-              end: "top 40%",
-              scrub: true,
-            },
-          }
-        );
-      });
-    }, mainRef);
+    // 2. Individual Card Animations
+    const projectCards = gsap.utils.toArray(".project-wrapper");
+    projectCards.forEach((card, i) => {
+      gsap.fromTo(
+        card,
+        { 
+          opacity: i === 0 ? 1 : 0, // First card starts visible
+          y: i === 0 ? 0 : 100,      // First card starts in position
+          scale: i === 0 ? 1 : 0.9 
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          scrollTrigger: {
+            trigger: card,
+            // Use the main container as the scroller reference for consistency
+            start: () => `top+=${i * 300} top`, 
+            end: "bottom top",
+            scrub: 1.5, // Smooth "catch-up" effect
+          },
+        }
+      );
+    });
+  }, mainRef);
 
-    return () => ctx.revert();
-  }, [projects.length]);
+  return () => ctx.revert();
+}, [projects.length]);
 
   return (
     <motion.div
