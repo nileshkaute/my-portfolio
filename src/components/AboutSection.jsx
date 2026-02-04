@@ -57,7 +57,7 @@ const AboutSection = () => {
       <motion.section
         ref={sectionRef}
         id="about"
-        className="flex flex-col md:flex-row items-center justify-center px-8 sm:px-10 md:px-12 min-h-screen relative overflow-hidden"
+        className="flex flex-col md:flex-row items-center justify-center px-8 sm:px-10 md:px-12 min-h-screen relative overflow-hidden about-section"
         style={{ margin: "15px", paddingTop: "80px", paddingBottom: "80px" }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -69,15 +69,15 @@ const AboutSection = () => {
 
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center md:items-center justify-center text-center md:text-left gap-12 relative z-10">
           
-          {/* Left Side - Image (Pinned on Scroll) */}
-          <div className="hidden md:flex justify-center items-center w-full md:w-1/3">
+          {/* Left Side - Image (Visible on all screens) */}
+          <div className="flex justify-center items-center w-full md:w-1/3">
             <div className="relative group">
                {/* Amber Glow behind image */}
               <div className="absolute -inset-1 bg-gradient-to-r from-mocha-900 to-gold rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <img
                 src={myImage}
                 alt="Profile"
-                className="relative rounded-2xl shadow-2xl border border-gold/50 w-64 h-64 md:w-80 md:h-80 object-cover mx-auto grayscale hover:grayscale-0 transition-all duration-700"
+                className="relative rounded-2xl shadow-2xl border border-gold/50 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover mx-auto grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
           </div>
@@ -86,7 +86,7 @@ const AboutSection = () => {
           <div className="w-full md:w-2/3">
             {/* Title */}
             <div className="mb-6 sm:mb-8 text-center md:text-left" ref={addToRefs}>
-           <h2 className="text-5xl  font-anton uppercase tracking-tight outline-text">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-anton uppercase tracking-tight outline-text">
   About Me
 </h2>
 
@@ -122,7 +122,7 @@ const AboutSection = () => {
                 <span className="text-gold font-semibold"> Java</span>.
               </p>
 
-              <p ref={addToRefs} className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-softGray max-w-4xl mx-auto md:mx-0 italic font-serif opacity-80">
+              <p ref={addToRefs} className="text-xs sm:text-sm md:text-lg lg:text-xl leading-relaxed text-softGray max-w-4xl mx-auto md:mx-0 italic font-serif opacity-80">
                 I believe in continuous learning — always improving my skills,
                 exploring new technologies, and creating meaningful, impactful
                 projects.
