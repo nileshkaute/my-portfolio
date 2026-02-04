@@ -104,13 +104,13 @@ const SkillsSection = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(201,162,77,0.05)_0%,transparent_70%)] pointer-events-none" />
       
       <div className="skills-header text-center relative z-10">
-        <h2 className="text-5xl font-anton uppercase tracking-tight outline-text text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-anton uppercase tracking-tight outline-text text-white">
           Mastery & <span className="text-gold drop-shadow-[0_0_10px_rgba(201,162,77,0.5)]">Arsenal</span>
         </h2>
         <div className="h-1 w-24 bg-gold mx-auto mt-4 blur-[1px]" />
       </div>
 
-      <div ref={containerRef} className="flex flex-col gap-10 w-full px-6 md:px-20 max-w-7xl relative z-10">
+      <div ref={containerRef} className="flex flex-col gap-6 sm:gap-10 w-full px-6 md:px-20 max-w-7xl relative z-10">
         <div className="skill-row-trigger">
           <SkillRow label="frontend" items={frontend} />
         </div>
