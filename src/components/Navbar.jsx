@@ -36,8 +36,8 @@ const Navbar = () => {
           scale: 1,
           opacity: 1,
           borderRadius: '10%',
-          width: 220,
-          height: 220,
+          width: 200,
+          height: 200,
           position: 'fixed',
         }
       : {
