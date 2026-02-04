@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
     return (
-        <footer className="h-screen w-full relative overflow-hidden bg-[#1a100a] flex items-center justify-center">
+        <footer className="h-screen w-full relative overflow-hidden bg-[#1a100a] flex items-center justify-center footer-section">
             
             {/* --- Background Video --- */}
             <div className="absolute inset-0 z-0">
@@ -25,7 +25,7 @@ const Footer = () => {
                     initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
                     whileInView={{ opacity: 1, scale: 1, rotate: -10 }}
                     transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[14vw] md:text-[14vw] font-black text-white/10 uppercase italic leading-none tracking-tighter text-center whitespace-nowrap"
+                    className="text-[18vw] sm:text-[16vw] md:text-[14vw] font-black text-white/10 uppercase italic leading-none tracking-tighter text-center whitespace-nowrap"
                     style={{ 
                         WebkitTextStroke: "1.5px rgba(255,255,255,0.08)",
                         textShadow: "0 0 60px rgba(0,0,0,0.8)",
