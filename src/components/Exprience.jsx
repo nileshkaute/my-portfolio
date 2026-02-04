@@ -20,7 +20,7 @@ const Experience = () => {
 
           {/* Centered Title */}
           <div className="flex justify-center">
-            <h2 className="text-5xl  font-anton uppercase tracking-tight outline-text">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-anton uppercase tracking-tight outline-text">
               Experi<span className="text-gold drop-shadow-[0_0_10px_rgba(201,162,77,0.5)]">ence</span>
             </h2>
           </div>
