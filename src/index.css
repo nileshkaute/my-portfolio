@@ -47,3 +47,160 @@ body::-webkit-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ------------------------------------------------------------------ */
+/* Responsive spacing tweaks for tablet and mobile (desktop untouched) */
+/* ------------------------------------------------------------------ */
+
+/* Default side-label placement (desktop) */
+.side-label {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  opacity: 0.25;
+  pointer-events: none;
+  font-size: 10px;
+}
+.hero-section .side-label.left {
+  left: 3rem; 
+  top: 50%;
+  transform: rotate(-90deg) translateY(-50%);
+}
+.hero-section .side-label.right {
+  right: 3rem; 
+  top: 50%;
+  transform: rotate(90deg) translateY(-50%);
+}
+
+/* Tablet and up to small laptops */
+@media (max-width: 1024px) {
+  /* Reduce vertical spacing on all sections (overrides inline styles for small screens) */
+  section,
+  .section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Reduce large gaps used in flex/grid layouts */
+  .gap-16 { gap: 8px !important; }
+  .gap-24 { gap: 12px !important; }
+
+  /* Reduce large bottom margins used for spacing between sections */
+  .mb-60 { margin-bottom: 20px !important; }
+  .mb-32 { margin-bottom: 16px !important; }
+
+  /* Make tall sections collapse to content height on smaller screens */
+  .min-h-screen { min-height: auto !important; }
+  .h-screen { min-height: 70vh !important; height: auto !important; }
+
+  /* Outlook text / large headings scale down a bit */
+  .outline-text { font-size: clamp(2rem, 8vw, 4rem) !important; }
+
+  /* ----------------------- */
+  /* Hero specific tweaks    */
+  /* ----------------------- */
+  .hero-section { padding-top: 40px !important; padding-bottom: 20px !important; }
+  .hero-section > section { height: auto !important; min-height: 60vh !important; }
+  .hero-section .bg-name h2 { font-size: clamp(5rem, 9vw, 10rem) !important; opacity: 0.08 !important; transform: translateZ(-80px) scale(.9) !important; }
+  .hero-section .hero-circle { width: 240px !important; height: 240px !important; }
+  .hero-section .hero-profile img { width: 320px !important; height: 320px !important; }
+  /* Reduce decorative large blurs on tablet */
+  .hero-section .w-\[40vw\], .hero-section .w-\[30vw\] { display: none !important; }
+  /* Show left/right rotated labels on tablet with adjusted position */
+  .hero-section .side-label { display: block !important; opacity: 0.6 !important; font-size: 10px !important; z-index: 5 !important; pointer-events: none !important; }
+  /* Pivot closer to the circle */
+  /* Strictly outside the 320px image on tablet */
+  .hero-section .side-label.left { left: calc(50% - 190px) !important; top: 58% !important; transform: translate(-50%, -50%) rotate(-90deg) !important; letter-spacing: 0.6em !important; }
+  .hero-section .side-label.right { left: calc(50% + 190px) !important; top: 58% !important; transform: translate(-50%, -50%) rotate(90deg) !important; letter-spacing: 0.6em !important; text-align: right !important; }
+  .hero-section .hero-profile { z-index: 10 !important; }
+  .hero-section .ui-point { display: none !important; }
+
+  /* ----------------------- */
+  /* Projects tweaks         */
+  /* ----------------------- */
+  .projects-section { padding-top: 40px !important; padding-bottom: 40px !important; }
+  .projects-section .gap-24 { gap: 12px !important; }
+  .projects-section .mb-32 { margin-bottom: 12px !important; }
+  .projects-section .text-5xl { font-size: clamp(1.6rem, 6vw, 2.6rem) !important; }
+
+  /* ----------------------- */
+  /* About tweaks            */
+  /* ----------------------- */
+  .about-section { padding-top: 40px !important; padding-bottom: 40px !important; }
+  .about-section img { width: 180px !important; height: 180px !important; }
+  .about-section .min-h-screen { min-height: auto !important; }
+
+  /* ----------------------- */
+  /* Footer tweaks           */
+  /* ----------------------- */
+  .footer-section { min-height: 70vh !important; }
+  .footer-section h2 { font-size: 22vw !important; }
+  .footer-section .absolute.bottom-10 { bottom: 1rem !important; }
+}
+
+/* Phones / small devices */
+@media (max-width: 640px) {
+  section,
+  .section {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .gap-16 { gap: 6px !important; }
+  .gap-24 { gap: 8px !important; }
+
+  .mb-60 { margin-bottom: 12px !important; }
+  .mb-32 { margin-bottom: 12px !important; }
+
+  .px-6 { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+
+  .min-h-screen { min-height: auto !important; }
+  .h-screen { min-height: 60vh !important; height: auto !important; }
+
+  /* Scale down very large typographic elements on tiny screens */
+  .outline-text { font-size: clamp(1.6rem, 10vw, 3rem) !important; }
+  .text-4xl { font-size: 1.4rem !important; }
+
+  /* ----------------------- */
+  /* Hero mobile tweaks      */
+  /* ----------------------- */
+  .hero-section { padding-top: 20px !important; padding-bottom: 8px !important; }
+  .hero-section > section { height: auto !important; min-height: 50vh !important; }
+  .hero-section .hero-profile img { width: 240px !important; height: 240px !important; }
+  .hero-section .hero-circle { width: 160px !important; height: 160px !important; }
+  .hero-section .bg-name h2 { font-size: 20vw !important; opacity: 0.06 !important; }
+  .hero-section .w-\[40vw\], .hero-section .w-\[30vw\] { display: none !important; }
+  .hero-section .ui-point { display: none !important; }
+  .hero-section .side-label { display: block !important; opacity: 0.5 !important; font-size: 9px !important; z-index: 5 !important; pointer-events: none !important; }
+  /* Strictly outside the 240px image on mobile */
+  .hero-section .side-label.left { left: calc(50% - 145px) !important; top: 55% !important; transform: translate(-50%, -50%) rotate(-90deg) !important; letter-spacing: 0.4em !important; }
+  .hero-section .side-label.right { left: calc(50% + 145px) !important; top: 55% !important; transform: translate(-50%, -50%) rotate(90deg) !important; letter-spacing: 0.4em !important; text-align: right !important; }
+  .hero-section .hero-profile { z-index: 10 !important; }
+  .hero-section .absolute { overflow: visible !important; }
+
+  /* ----------------------- */
+  /* Projects mobile tweaks  */
+  /* ----------------------- */
+  .projects-section { padding-top: 24px !important; padding-bottom: 24px !important; }
+  .projects-section .gap-24 { gap: 8px !important; }
+  .projects-section .text-5xl { font-size: clamp(1.4rem, 8vw, 2.2rem) !important; }
+
+  /* ----------------------- */
+  /* About mobile tweaks     */
+  /* ----------------------- */
+  .about-section { padding-top: 20px !important; padding-bottom: 20px !important; }
+  .about-section img { width: 120px !important; height: 120px !important; }
+
+  /* ----------------------- */
+  /* Footer mobile tweaks    */
+  /* ----------------------- */
+  .footer-section { min-height: 60vh !important; padding-bottom: 24px !important; }
+  .footer-section h2 { font-size: 26vw !important; }
+  .footer-section .absolute.bottom-10 { bottom: 0.5rem !important; }
+
+  /* Footer adjustments so it doesn't occupy a full screen on phones */
+  footer.h-screen { min-height: 60vh !important; height: auto !important; padding-bottom: 32px !important; }
+  .absolute.bottom-10 { bottom: 0.75rem !important; }
+}
