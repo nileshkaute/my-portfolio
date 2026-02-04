@@ -129,7 +129,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div ref={componentRef} className="w-full min-h-screen overflow-x-hidden" onMouseMove={handleMouseMove}
+    <div ref={componentRef} className="w-full min-h-screen overflow-x-hidden hero-section" onMouseMove={handleMouseMove}
      style={{paddingBottom:"15px"}}
     >
       
@@ -156,12 +156,12 @@ const Hero = () => {
         </div>
 
         {/* Animated Headline */}
-        <div className="hidden lg:flex absolute inset-0 justify-center items-center pointer-events-none z-50">
+        <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-50">
           <h1 
             ref={headlineRef}
-            className="text-[4rem] font-black text-gold opacity-0 whitespace-nowrap px-4 uppercase italic tracking-tighter"
+            className="text-[1.8rem] sm:text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] font-black text-gold opacity-0 lg:opacity-0 whitespace-normal lg:whitespace-nowrap px-6 uppercase italic tracking-tighter text-center"
           >
-            <span className="text-ivory">From Logic to Life—</span><span className="text-gold drop-shadow-[0_0_10px_rgba(201,162,77,0.5)]">I Build What You Imagine.</span>
+            <span className="text-ivory">From Logic to Life—</span><br className="lg:hidden" /><span className="text-gold drop-shadow-[0_0_10px_rgba(201,162,77,0.5)]">I Build What You Imagine.</span>
           </h1>
         </div>
 
@@ -175,11 +175,11 @@ const Hero = () => {
           {/* Background Name */}
           <div 
             ref={bgTextRef}
-            className="absolute z-0 select-none pointer-events-none"
+            className="absolute z-0 select-none pointer-events-none bg-name"
             style={{ transform: "translateZ(-80px)" }}
           >
             <h2 
-              className="text-[18vw] lg:text-[16vw] font-black leading-none text-transparent whitespace-nowrap uppercase italic"
+              className="text-[25vw] sm:text-[20vw] lg:text-[16vw] font-black leading-none text-transparent whitespace-nowrap uppercase italic"
               style={{ 
                 WebkitTextStroke: "1px rgba(201, 162, 77, 0.25)",
                 letterSpacing: "-0.02em"
@@ -201,32 +201,29 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Circle Backdrop - Removed opacity-0 */}
-            <div ref={circleRef} className="absolute w-[280px] h-[280px] md:w-[500px] md:h-[500px] lg:w-[620px] lg:h-[620px] border border-gold/20 bg-mocha-900/5 rounded-full -z-10" />
+            {/* Circle Backdrop - Shown only on large screens to keep it simple on mobile */}
+            <div ref={circleRef} className="absolute w-[280px] h-[280px] md:w-[500px] md:h-[500px] lg:w-[620px] lg:h-[620px] border border-gold/20 bg-mocha-900/5 rounded-full -z-10 hero-circle hidden lg:block" />
 
-            {/* Profile Image - Removed opacity-0 */}
-            <div className="relative inline-block p-[4px] lg:p-[8px] rounded-full border-2 border-gold/30 overflow-hidden bg-gradient-to-b from-mocha-900/20 to-transparent" ref={profileRef}>
+            {/* Profile Image - Primary 'Circle' */}
+            <div className="relative inline-block p-[4px] lg:p-[8px] rounded-full border-2 border-gold/30 overflow-hidden bg-gradient-to-b from-mocha-900/20 to-transparent hero-profile" ref={profileRef}>
               <img
                 src={profileImage}
                 alt="Nilesh"
                 loading="eager"
                 fetchPriority="high"
-                className="w-[270px] h-[270px] md:w-[480px] md:h-[485px] lg:w-[600px] lg:h-[605px] object-contain rounded-full brightness-90 contrast-110"
+                className="w-[300px] h-[300px] sm:w-[340px] sm:h-[340px] md:w-[520px] md:h-[525px] lg:w-[600px] lg:h-[605px] object-contain rounded-full brightness-90 contrast-110"
               />
             </div>
 
-            <div className="lg:hidden mt-6 flex flex-col items-center">
-                <span className="text-gold text-[12px] tracking-[0.5em] uppercase font-bold mb-2">Nilesh Kaute</span>
-                <div className="w-10 h-[1px] bg-gold/50"></div>
-            </div>
-
-            <div aria-hidden="true" className="hidden lg:block absolute -left-32 top-1/2 -rotate-90 text-gold/20 text-[10px] tracking-[1em] uppercase font-bold" style={{ contentVisibility: 'auto' }}>
-              Java Full Stack
-            </div>
-            <div aria-hidden="true" className="hidden lg:block absolute -right-32 top-1/2 rotate-90 text-gold/20 text-[10px] tracking-[1em] uppercase font-bold" style={{ contentVisibility: 'auto' }}>
-              Creative Tech
-            </div>
           </div>
+        </div>
+
+        {/* Labels positioned in corners on all screens */}
+        <div aria-hidden="true" className="side-label left absolute z-50 text-gold/20 text-[10px] tracking-[1em] uppercase font-bold whitespace-nowrap" style={{ contentVisibility: 'auto' }}>
+            Java Full Stack
+        </div>
+        <div aria-hidden="true" className="side-label right absolute z-50 text-gold/20 text-[10px] tracking-[1em] uppercase font-bold whitespace-nowrap" style={{ contentVisibility: 'auto' }}>
+            Creative Tech
         </div>
       </section>
     </div>
