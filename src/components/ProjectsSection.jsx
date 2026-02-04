@@ -107,7 +107,7 @@ useLayoutEffect(() => {
   return (
     <motion.div
       ref={mainRef}
-      className="relative flex flex-col items-center w-full"
+      className="relative flex flex-col items-center w-full projects-section"
       style={{ paddingTop: "80px", paddingBottom: "80px" }}
       id="projects"
       initial="hidden"
@@ -118,7 +118,7 @@ useLayoutEffect(() => {
         className="flex flex-col items-center gap-6 mb-32 text-center"
         variants={item}
       >
-        <h2 className="text-5xl font-anton uppercase tracking-tight outline-text text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-anton uppercase tracking-tight outline-text text-white">
           My{" "}
           <span className="text-gold drop-shadow-[0_0_10px_rgba(201,162,77,0.5)]">
             Projects
@@ -129,7 +129,7 @@ useLayoutEffect(() => {
         </p>
       </motion.div>
 
-      <div ref={projectsContainerRef} className="w-full flex flex-col items-center gap-24">
+      <div ref={projectsContainerRef} className="w-full flex flex-col items-center gap-20 sm:gap-24">
         {projects.map((proj, index) => (
           <div 
             key={index} 
