@@ -151,8 +151,8 @@ const Hero = () => {
                 <div className="w-12 h-[1px] bg-gold/40 mt-1 ml-auto"></div>
             </div>
 
-            <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-gold/5 blur-[120px] rounded-full"></div>
-            <div className="absolute bottom-[-10%] left-[-5%] w-[30vw] h-[30vw] bg-gold/5 blur-[100px] rounded-full"></div>
+            <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-gold/5 blur-[120px] rounded-full blur-top-right"></div>
+            <div className="absolute bottom-[-10%] left-[-5%] w-[30vw] h-[30vw] bg-gold/5 blur-[100px] rounded-full blur-bottom-left"></div>
         </div>
 
         {/* Animated Headline */}

@@ -101,7 +101,7 @@ body::-webkit-scrollbar {
   /* Hero specific tweaks    */
   /* ----------------------- */
   .hero-section { padding-top: 40px !important; padding-bottom: 20px !important; }
-  .hero-section > section { height: auto !important; min-height: 60vh !important; }
+  .hero-section > section { height: auto !important; min-height: 60vh !important; overflow: visible !important; }
   .hero-section .bg-name h2 { font-size: clamp(5rem, 9vw, 10rem) !important; opacity: 0.08 !important; transform: translateZ(-80px) scale(.9) !important; }
   .hero-section .hero-circle { width: 240px !important; height: 240px !important; }
   .hero-section .hero-profile img { width: 320px !important; height: 320px !important; }
@@ -111,9 +111,37 @@ body::-webkit-scrollbar {
   .hero-section .side-label { display: block !important; opacity: 0.6 !important; font-size: 10px !important; z-index: 5 !important; pointer-events: none !important; }
   /* Pivot closer to the circle */
   /* Strictly outside the 320px image on tablet */
-  .hero-section .side-label.left { left: calc(50% - 190px) !important; top: 58% !important; transform: translate(-50%, -50%) rotate(-90deg) !important; letter-spacing: 0.6em !important; }
-  .hero-section .side-label.right { left: calc(50% + 190px) !important; top: 58% !important; transform: translate(-50%, -50%) rotate(90deg) !important; letter-spacing: 0.6em !important; text-align: right !important; }
-  .hero-section .hero-profile { z-index: 10 !important; }
+  .hero-section .side-label.left { 
+  /* 1. Reset right and anchor to the left edge */
+  right: auto !important;
+  left: 2rem !important; /* Adjust this (e.g., 1.5rem) to change distance from the edge */
+  
+  /* 2. Center vertically without interfering with horizontal placement */
+  top: 50% !important; 
+  transform: translateY(-50%) rotate(-90deg) !important; 
+  
+  /* 3. Ensure the text stays on one line and doesn't clip */
+  white-space: nowrap !important;
+  letter-spacing: 0.6em !important; 
+  text-align: left !important; 
+}
+  .hero-section .side-label.right { 
+  /* 1. Clear the left calculation from desktop/previous styles */
+  left: auto !important; 
+  
+  /* 2. Anchor to the right edge with a small margin */
+  right: 2rem !important; 
+  
+  /* 3. Center vertically without interfering with horizontal placement */
+  top: 50% !important; 
+  transform: translateY(-50%) rotate(90deg) !important; 
+  
+  /* 4. Ensure the text doesn't wrap or collapse */
+  white-space: nowrap !important;
+  letter-spacing: 0.6em !important; 
+  text-align: right !important; 
+}
+  .hero-section .hero-profile { z-index: 70 !important; }
   .hero-section .ui-point { display: none !important; }
 
   /* ----------------------- */
@@ -166,19 +194,44 @@ body::-webkit-scrollbar {
   /* ----------------------- */
   /* Hero mobile tweaks      */
   /* ----------------------- */
-  .hero-section { padding-top: 20px !important; padding-bottom: 8px !important; }
-  .hero-section > section { height: auto !important; min-height: 50vh !important; }
-  .hero-section .hero-profile img { width: 240px !important; height: 240px !important; }
-  .hero-section .hero-circle { width: 160px !important; height: 160px !important; }
-  .hero-section .bg-name h2 { font-size: 20vw !important; opacity: 0.06 !important; }
-  .hero-section .w-\[40vw\], .hero-section .w-\[30vw\] { display: none !important; }
-  .hero-section .ui-point { display: none !important; }
-  .hero-section .side-label { display: block !important; opacity: 0.5 !important; font-size: 9px !important; z-index: 5 !important; pointer-events: none !important; }
-  /* Strictly outside the 240px image on mobile */
-  .hero-section .side-label.left { left: calc(50% - 145px) !important; top: 55% !important; transform: translate(-50%, -50%) rotate(-90deg) !important; letter-spacing: 0.4em !important; }
-  .hero-section .side-label.right { left: calc(50% + 145px) !important; top: 55% !important; transform: translate(-50%, -50%) rotate(90deg) !important; letter-spacing: 0.4em !important; text-align: right !important; }
-  .hero-section .hero-profile { z-index: 10 !important; }
-  .hero-section .absolute { overflow: visible !important; }
+    .hero-section { padding-top: 20px !important; padding-bottom: 8px !important; }
+    .hero-section > section { height: auto !important; min-height: 50vh !important; overflow: visible !important; }
+    .hero-section .hero-profile img { width: 240px !important; height: 240px !important; }
+    .hero-section .hero-circle { width: 160px !important; height: 160px !important; }
+    .hero-section .bg-name h2 { font-size: 20vw !important; opacity: 0.06 !important; }
+    /* Mobile: hide bottom-left blur, scale top-right blur smaller */
+    .hero-section .blur-bottom-left { display: none !important; }
+    .hero-section .blur-top-right { width: 28vw !important; height: 28vw !important; right: -3% !important; top: -5% !important; }
+    .hero-section .ui-point { display: none !important; }
+    .hero-section .side-label { display: block !important; opacity: 0.5 !important; font-size: 9px !important; z-index: 60 !important; pointer-events: none !important; }
+    /* Place labels vertically outside the circle on mobile (center-left / center-right) */
+    /* Update these specific lines in your mobile media query */
+
+/* Update this inside your @media (max-width: 640px) block */
+
+.hero-section .side-label.left { 
+  /* 1. Use a positive percentage to keep it on screen */
+  /* 2. Add !important to override the tablet calc() */
+  left: -5% !important; 
+  right: auto !important;
+  top: 55% !important; 
+  transform: translateY(-50%) rotate(-90deg) !important; 
+  transform-origin: center;
+  letter-spacing: 0.4em !important; 
+  text-align: left !important; 
+}
+
+.hero-section .side-label.right { 
+  /* Use a positive percentage for right as well */
+  right: -5% !important; 
+  left: auto !important; 
+  top: 55% !important; 
+  transform: translateY(-50%) rotate(90deg) !important; 
+  transform-origin: center;
+  letter-spacing: 0.4em !important; 
+  text-align: right !important; 
+}
+    .hero-section .absolute { overflow: visible !important; }
 
   /* ----------------------- */
   /* Projects mobile tweaks  */
