@@ -9,31 +9,31 @@ const works = [
     year: "2025",
     title: "Deadpool MaxEffort",
     category: "Entertainment & Digital Media",
-    img: "https://images.unsplash.com/photo-1606112219348-204d7d8b94ee?auto=format&fit=crop&w=800&q=80"
+    img: "/images/otherwork/deadpool.png"
   },
   {
     year: "2025",
     title: "Nature’s Paradise",
     category: "Travel & Eco-Tourism",
-    img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+    img: "/images/otherwork/nature.png"
   },
   {
     year: "2025",
     title: "AI Future Web",
     category: "Artificial Intelligence & Future Tech",
-    img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
+    img: "/images/otherwork/aifuture.png"
   },
   {
     year: "2025",
     title: "Cafe Gratitude",
     category: "Food & Hospitality Landing Page",
-    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+    img: "/images/otherwork/cafe.png"
   },
   {
     year: "2025",
     title: "Amul Reimagined",
     category: "Dairy, FMCG & Brand Redesign",
-    img: "https://images.unsplash.com/photo-1585238342028-4bbc8f29b8a7?auto=format&fit=crop&w=800&q=80"
+    img: "/images/otherwork/amul.png"
   }
  
 ];
@@ -113,7 +113,7 @@ const works = [
             transform: hoveredIndex !== null ? 'scale(1)' : 'scale(0.8)',
             transition: 'opacity 0.4s ease, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1)',
           }}
-          className="hidden lg:block w-[350px] h-[450px] overflow-hidden shadow-2xl"
+          className="hidden lg:block w-[550px] h-[320px] overflow-hidden shadow-2xl rounded-lg"
         >
           <img
             src={works[hoveredIndex].img}

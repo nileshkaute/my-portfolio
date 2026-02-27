@@ -43,8 +43,39 @@ const AboutSection = () => {
               index * 0.7 
             );
           });
+          // animate image container if it's included in refs (first element)
+          if(textRefs.current.length){
+            const imgEl = textRefs.current[0]; // assuming image wrapper added first
+            tl.fromTo(
+              imgEl,
+              { opacity: 0, scale: 0.8 },
+              { opacity: 1, scale: 1, duration: 1 },
+              0 // start at beginning
+            );
+          }
           
           tl.to({}, { duration: 1 }); // Buffer at the end
+        },
+        // MOBILE / TABLET: keep animation but avoid long pinning
+        "(max-width: 767px)": function () {
+          // fade-in each paragraph (and image) as it scrolls into view
+          textRefs.current.forEach((el) => {
+            gsap.fromTo(
+              el,
+              { opacity: 0, y: 40 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                scrollTrigger: {
+                  trigger: el,
+                  start: "top 90%",
+                  end: "top 60%",
+                  scrub: true,
+                },
+              }
+            );
+          });
         },
       });
     }, pinTriggerRef);
@@ -71,7 +102,7 @@ const AboutSection = () => {
           
           {/* Left Side - Image (Visible on all screens) */}
           <div className="flex justify-center items-center w-full md:w-1/3">
-            <div className="relative group">
+            <div className="relative group" ref={addToRefs}>
                {/* Amber Glow behind image */}
               <div className="absolute -inset-1 bg-gradient-to-r from-mocha-900 to-gold rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <img
